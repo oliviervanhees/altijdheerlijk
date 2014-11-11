@@ -1,4 +1,6 @@
 Altijdheerlijk::Application.routes.draw do
+  root "pages#home"
+  get "over_ons" => "pages#over_ons"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
