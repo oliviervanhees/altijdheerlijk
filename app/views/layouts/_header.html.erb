@@ -6,14 +6,17 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
-    </button>
+    </button>  
+                         
     <a class="navbar-brand" href="#">Altijd Heerlijk</a>
+
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", root_path %></li>
+    <nav class="navbar navbar- navbar-inverse" role="navigation">
+    <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to "Inloggen", root_path %></li>
             <li><%= link_to "Kies je smaak", kies_je_smaak_path %></li> 
             <li><%= link_to "Mijn recepten", mijn_recepten_path %></li> 
             <li><%= link_to "Mijn voorkeuren", mijn_voorkeuren_path %></li>    
