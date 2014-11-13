@@ -1,6 +1,8 @@
 Altijdheerlijk::Application.routes.draw do
   root "pages#home"
-  get "over_ons" => "pages#over_ons"
+  get "mijn_recepten" => "pages#mijn_recepten"
+  get "mijn_voorkeuren" => "pages#mijn_voorkeuren"
+  get "kies_je_smaak" => "pages#kies_je_smaak"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
