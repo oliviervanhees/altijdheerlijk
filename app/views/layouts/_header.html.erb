@@ -16,10 +16,17 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <nav class="navbar navbar- navbar-inverse" role="navigation">
     <ul class="nav navbar-nav navbar-left">
-            <li><%= link_to "Inloggen", root_path %></li>
+            <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Kies je smaak", kies_je_smaak_path %></li> 
             <li><%= link_to "Mijn recepten", mijn_recepten_path %></li> 
-            <li><%= link_to "Mijn voorkeuren", mijn_voorkeuren_path %></li>    
+            <li><%= link_to "Mijn voorkeuren", mijn_voorkeuren_path %></li> 
+    </ul>
+    <ul class="nav navbar-nav navbar-right"> 
+            <% if user_signed_in? %>  
+            <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
+            <% else %>
+            <%= link_to "Log in", new_user_session_path %>
+            <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

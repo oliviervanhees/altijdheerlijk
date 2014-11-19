@@ -1,4 +1,5 @@
 Altijdheerlijk::Application.routes.draw do
+  devise_for :users
   root "pages#home"
   get "mijn_recepten" => "pages#mijn_recepten"
   get "mijn_voorkeuren" => "pages#mijn_voorkeuren"
