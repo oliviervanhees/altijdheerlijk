@@ -1,0 +1,27 @@
+<h1>Jouw recepten </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Naam recept</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr>
+        <td><%= pin.description %></td>
+        <td><%= link_to 'Toon recept', pin %></td>
+        <td><%= link_to 'Wijzig recept', edit_pin_path(pin) %></td>
+        <td><%= link_to 'Verwijder recept', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nieuw recept', new_pin_path %>

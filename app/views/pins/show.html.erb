@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Naam recept:</strong>
+  <%= @pin.description %>
+</p>
+
+<%= link_to 'Wijzig recept', edit_pin_path(@pin) %> |
+<%= link_to 'Terug', pins_path %>

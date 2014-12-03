@@ -1,4 +1,6 @@
 Altijdheerlijk::Application.routes.draw do
+  resources :pins
+
   devise_for :users
   root "pages#home"
   get "mijn_recepten" => "pages#mijn_recepten"

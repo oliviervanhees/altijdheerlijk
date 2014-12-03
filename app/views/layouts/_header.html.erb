@@ -22,6 +22,7 @@
             <li><%= link_to "Mijn voorkeuren", mijn_voorkeuren_path %></li> 
     </ul>
     <ul class="nav navbar-nav navbar-right"> 
+            <li><%= link_to "Mijn profiel", edit_user_registration_path %></li>
             <% if user_signed_in? %>  
             <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
             <% else %>
