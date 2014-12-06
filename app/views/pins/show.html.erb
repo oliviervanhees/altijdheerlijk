@@ -4,6 +4,7 @@
   <strong>Naam recept:</strong>
   <%= @pin.description %>
 </p>
-
-<%= link_to 'Wijzig recept', edit_pin_path(@pin) %> |
+<% if @pin.user == current_user %>
+<%= link_to 'Wijzig recept', edit_pin_path(@pin) %> 
+<% end %>
 <%= link_to 'Terug', pins_path %>

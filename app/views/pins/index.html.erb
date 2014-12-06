@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Naam recept</th>
-      <th></th>
+      <th>Gebruiker</th>
       <th></th>
       <th></th>
     </tr>
@@ -14,14 +14,18 @@
     <% @pins.each do |pin| %>
       <tr>
         <td><%= pin.description %></td>
+        <td><%= pin.user.email if pin.user %></td>
         <td><%= link_to 'Toon recept', pin %></td>
-        <td><%= link_to 'Wijzig recept', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Verwijder recept', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if pin.user == current_user %>
+          <td><%= link_to 'Wijzig recept', edit_pin_path(pin) %></td>
+          <td><%= link_to 'Verwijder recept', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %> 
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'Nieuw recept', new_pin_path %>
+<% end %>

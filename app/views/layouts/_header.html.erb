@@ -26,7 +26,7 @@
             <% if user_signed_in? %>  
             <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
             <% else %>
-            <%= link_to "Log in", new_user_session_path %>
+            <%= link_to "Inloggen", new_user_session_path %>
             <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
