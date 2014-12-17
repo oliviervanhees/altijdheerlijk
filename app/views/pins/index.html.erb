@@ -3,12 +3,7 @@
    <div class="box panel panel-default">
       <%= image_tag pin.image.url(:medium) %>
       <%= pin.description %>
-      <%= pin.user.email if pin.user %>
       <%= link_to 'Bekijk recept', pin_path(pin) %>
-      <% if pin.user == current_user %>
-        <%= link_to 'Wijzig recept', edit_pin_path(pin) %>
-        <%= link_to 'Verwijder recept', pin, method: :delete, data: { confirm: 'Weet je het zeker?' } %>
-      <% end %>
     </div>
   <% end %>
 </div>

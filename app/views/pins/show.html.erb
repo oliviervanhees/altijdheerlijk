@@ -3,9 +3,15 @@
   <%= @pin.description %>
 </p>
 <%= image_tag @pin.image.url (:medium)%>
+<br>
+<%= @pin.user.email %>
+<br>
 <p>
 	<% if @pin.user == current_user %>
 	<%= link_to 'Wijzig recept', edit_pin_path(@pin) %> 
+	 <%= link_to 'Verwijder recept', @pin, method: :delete, data: { confirm: 'Weet je het zeker?' } %>
 	<% end %>
 	<%= link_to 'Terug', pins_path %>
+</br>
+</br>
 </p>
