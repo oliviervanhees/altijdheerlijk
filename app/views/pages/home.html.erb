@@ -1,10 +1,12 @@
 <h1>Welkom bij Altijd Heerlijk</h1>
-     <% if user_signed_in? %>	
-      	# do something
-     <% else %>
-<%= link_to "Log in", new_user_session_path, class: "btn btn-primary btn-lg" %> of  
-<%= link_to "Meld je aan", new_user_registration_path, class: "btn btn-primary btn-lg" %> en wij helpen jou in het geven van persoonlijke suggesties voor heerlijke recepten!
-<% end %>  
 <div class="jumbotron center">
+	<% if user_signed_in? %>	
+		Bekijk <%= link_to "mijn recepten", pins_path, class: "btn btn-info" %> of maak een 
+		<%= link_to "nieuw recept", new_pin_path, class: "btn btn-info" %> aan.
+     <% else %>
+		<%= link_to "Log in", new_user_session_path, class: "btn btn-info" %> of  
+		<%= link_to "Meld je aan", new_user_registration_path, class: "btn btn-info" %> om zelf recepten toe te voegen.
+	<% end %>  
+
     </p>    
 </div>
