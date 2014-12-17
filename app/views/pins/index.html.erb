@@ -17,7 +17,8 @@
         <tbody>
           <% @pins.each do |pin| %>
             <tr>
-              <td><%= image_tag pin.image.url(:thumb) %></td>
+              <td><%= image_tag pin.image.url(:thumb)%>
+                <br><%= link_to 'Toon recept', pin %></br></td>
               <td><%= pin.description %></td>
               <td><%= pin.user.email if pin.user %></td>
               <td><%= link_to 'Toon recept', pin %></td>
