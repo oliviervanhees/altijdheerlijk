@@ -1,17 +1,26 @@
-<p>
-  <strong>Naam recept:</strong>
-  <%= @pin.description %>
-</p>
-<%= image_tag @pin.image.url (:medium)%>
-<br>
-<%= @pin.user.email %>
-<br>
-<p>
-	<% if @pin.user == current_user %>
-	<%= link_to 'Wijzig recept', edit_pin_path(@pin) %> 
-	 <%= link_to 'Verwijder recept', @pin, method: :delete, data: { confirm: 'Weet je het zeker?' } %>
-	<% end %>
-	<%= link_to 'Terug', pins_path %>
-</br>
-</br>
-</p>
+<p><%= link_to 'Terug', pins_path %></p>
+
+
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+      	<p><strong><%= @pin.description %></strong></p>
+      	<%= image_tag @pin.image.url(:medium) %>
+      </div>
+      <div class="panel-body">
+        <p><%= @pin.description %></p>
+        <p><strong><%= @pin.user.email if @pin.user %></strong></p>
+
+        <% if @pin.user == current_user %>
+         <%= link_to 'Wijzig recept', edit_pin_path(@pin) %>
+         <%= link_to 'Verwijder recept', @pin, method: :delete, data: { confirm: 'Weet je het zeker?' } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
