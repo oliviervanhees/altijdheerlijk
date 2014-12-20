@@ -9,30 +9,35 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
-        <%= f.label :email %>
+        <%= f.label :name, "Naam" %>
+        <%= f.text_field :name, class: "form-control", :autofocus => true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, "Email adres" %>
         <%= f.email_field :email, class: "form-control", :autofocus => true %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+        <%= f.label :password, "Wachtwoord" %> <i>(laat leeg als je jouw wachtwoord niet wilt wijzigen)</i>
         <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+        <%= f.label :current_password, "Bevestig wachtwoord" %> <i>(vul je wachtwoord nogmaals in)</i>
         <%= f.password_field :current_password, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.submit "Update", class: "btn btn-info" %>
+        <%= f.submit "Opslaan", class: "btn btn-info" %>
       </div>
     <% end %>
   </div>
   <div class="panel-footer">
-    <h3>Cancel my account</h3>
+    <h3>Profiel verwijderen?</h3>
 
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, class: "btn btn-info" %></p>
+    <p><%= button_to "Verwijder mijn profiel", registration_path(resource_name), :data => { :confirm => "Weet je het zeker?" }, :method => :delete, class: "btn btn-info" %></p>
 
-    <%= link_to "Back", :back %>
+    <%= link_to "Terug", :back %>
   </div>
 </div>
