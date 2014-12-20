@@ -51,7 +51,7 @@ class PinsController < ApplicationController
 
     def correct_user
       @pin = current_user.pins.find_by(id: params[:id])
-      redirect_to pins_path, notice: "Het is alleen toegestaan om eigen receppten te wijzigen" if @pin.nil?
+      redirect_to pins_path, notice: "Het is alleen toegestaan om eigen recepten te wijzigen" if @pin.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
