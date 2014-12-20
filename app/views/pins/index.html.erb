@@ -1,5 +1,4 @@
-<%= render 'pages/login' unless user_signed_in? %>
-
+<% if user_signed_in? %>  
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
     <div class="box panel panel-default">
@@ -24,3 +23,6 @@
     </div>
   <% end %>
 </div>
+<% else %>
+<%= render 'pages/login' %>
+<% end %>
