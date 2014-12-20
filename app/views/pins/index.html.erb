@@ -1,3 +1,5 @@
+<%= render 'pages/login' unless user_signed_in? %>
+
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
     <div class="box panel panel-default">
@@ -8,8 +10,14 @@
           <p><%= link_to 'Bekijk recept', pin_path(pin) %></p>
             <% if pin.user == current_user %>
               <div class="actions">
-                  <%= link_to 'Wijzig', edit_pin_path(pin) %>
-                  <%= link_to 'Verwijder', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to edit_pin_path(@pin) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Wijzig
+                  <% end %>
+                  <%= link_to pin, method: :delete, data: { confirm: 'Weet je het zeker?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                     Verwijder
+                  <% end %>
               </div>
             <% end %>
           </div>

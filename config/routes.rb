@@ -2,7 +2,7 @@ Altijdheerlijk::Application.routes.draw do
   resources :pins
 
   devise_for :users
-  root "pages#home"
+  root "pins#index"
   get "mijn_recepten" => "pages#mijn_recepten"
   get "mijn_voorkeuren" => "pages#mijn_voorkeuren"
   get "kies_je_smaak" => "pages#kies_je_smaak"
