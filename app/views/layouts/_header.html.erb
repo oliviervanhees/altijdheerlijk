@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
             <% if user_signed_in? %>  
               <li><%= link_to "Mijn suggesties", mijn_voorkeuren_path %></li> 
+              <li><%= link_to "Mijn favoriete recepten", kies_je_smaak_path %></li> 
               <li><%= link_to "Mijn recepten", mijn_bewaarde_recepten_path %></li> 
               <li><%= link_to 'Recept toevoegen', new_pin_path %></li>
               <li><%= link_to "Mijn profiel", edit_user_registration_path %></li>
