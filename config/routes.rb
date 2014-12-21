@@ -1,7 +1,7 @@
 Altijdheerlijk::Application.routes.draw do
   resources :pins
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   root "pins#index"
   get "mijn_recepten" => "pages#mijn_recepten"
   get "mijn_voorkeuren" => "pages#mijn_voorkeuren"

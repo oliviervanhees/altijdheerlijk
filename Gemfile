@@ -32,6 +32,10 @@ gem 'devise', '~> 3.4.1'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.20.0'
 gem 'masonry-rails', '~> 0.2.0'
+gem 'rename'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
