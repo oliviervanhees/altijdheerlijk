@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220152907) do
+ActiveRecord::Schema.define(version: 20141223233121) do
 
   create_table "pins", force: true do |t|
     t.string   "description"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20141220152907) do
     t.string   "uid"
     t.string   "facebook_id"
     t.string   "name"
+    t.string   "provider2"
+    t.string   "uid2"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -35,6 +35,7 @@ gem 'masonry-rails', '~> 0.2.0'
 gem 'rename'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'shareable'
 
 
 # Use sqlite3 as the database for Active Record
