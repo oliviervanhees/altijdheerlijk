@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 	has_many :pins
 
 	def self.from_omniauth(auth)
-      where(provider2: auth.provider, uid: auth.uid).first_or_create do |user|
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.provider2 = auth.provider
         user.uid2 = auth.uid
         user.email = auth.info.email
