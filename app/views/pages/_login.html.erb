@@ -1,7 +1,24 @@
-<h1>Welkom bij Altijd Heerlijk</h1>
-<div class="jumbotron center">
-	<p>
-		<%= link_to "Log in", new_user_session_path, class: "btn btn-info" %> of  
-		<%= link_to "Maak een account aan", new_user_registration_path, class: "btn btn-info" %> om zelf recepten toe te voegen, je favoriete recepten op te slaan en om persoonlijke suggesties te ontvangen.
-    </p>    
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  	 <div class="panel-title">
+  	 	<h1>Welkom bij Altijd Heerlijk</h1>
+  	 	</div>
+
+		<div class="panel-heading">
+  			Gebruik je Facebook account
+		</div>
+  
+  		<div class="panel-body">
+     	 	<%= link_to "Login met Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-info" %><br/>
+		</div>
+
+		<div class="panel-body">
+			Of log in met je Altijd Heerlijk account: <%= link_to "Inloggen", new_user_session_path %> 
+		</div>
+
+		<div class="panel-heading">
+		Of maak zelf een account aan: <%= link_to "Aanmelden", new_user_registration_path %> 
+    	</div>   
+</div>
 </div>
