@@ -2,6 +2,7 @@ Altijdheerlijk::Application.routes.draw do
   resources :pins
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  resources :users, only: [:show]
 
   root "pins#index"
   get "mijn_recepten" => "pages#mijn_recepten"
@@ -9,6 +10,8 @@ Altijdheerlijk::Application.routes.draw do
   get "kies_je_smaak" => "pages#kies_je_smaak"
   get "users_volgen" => "pages#users_volgen"
   get "mijn_bewaarde_recepten" => "pins#mijn_bewaarde_recepten"
+
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -7,8 +7,8 @@
         <th>Foto</th>
         <th>Naam</th>
         <th>Emailadres</th>
+        <th>Bekijk profiel</th>
         <th>Volg gebruiker</th>
-        <th>Bekijk recepten</th>
         <th></th>
       </tr>
     </thead>
@@ -20,7 +20,7 @@
           <td></td>
           <td><%= user.name %></td>
           <td><%= user.email %></td>
-          <td></td>
+          <td><%= link_to "Bekijk profiel", user_path(user) %></td>
           <td></td>
           <td></td>
         </tr>
