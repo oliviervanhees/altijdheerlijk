@@ -1,0 +1,32 @@
+<h1>Gebuikers volgen</h1>
+<div class="table-responsive">
+  <table class="table">
+
+      <thead>
+      <tr>
+        <th>Foto</th>
+        <th>Naam</th>
+        <th>Emailadres</th>
+        <th>Volg gebruiker</th>
+        <th>Bekijk recepten</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+    	<% @users = User.all %>
+		  <% @users.each do |user| %>
+        <tr>
+          <td></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>
+       
