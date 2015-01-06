@@ -7,11 +7,11 @@
           <div class="panel-body">
           <%= link_to image_tag(user.image.url(:medium)), user %>
                 <div class="actions">
-               	<p><%= user.name %></p></p>
+               	<strong><p><%= user.name %></p></p></strong>
                	<p><%= user.email %></p></p>
                 <p><%= link_to 'Bekijk profiel', user_path(user) %></p>
                 <span class="glyphicon glyphicon-cutlery"></span>
-                <strong>Volg gebruiker</strong>
+                Volg gebruiker
               </div>
           </div>
     </div>
