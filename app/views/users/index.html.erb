@@ -1,4 +1,5 @@
-<h1>Gebuikers volgen</h1>
+<h1>Chefs</h1>
+<p>Bekijk hier alle chefs die lid zijn van Altijd Heerlijk. <strong> Tip: </strong> volg jouw favoriete chef en ontdek heerlijke nieuwe recepten.</p>
 
 <% if user_signed_in? %>  
 <div id="pins" class="transitions-enabled">
@@ -9,9 +10,9 @@
                 <div class="actions">
                	<strong><p><%= user.name %></p></p></strong>
                	<p><%= user.email %></p></p>
-                <p><%= link_to 'Bekijk profiel', user_path(user) %></p>
+                <p><%= link_to 'Bekijk profiel van deze chef', user_path(user) %></p>
                 <span class="glyphicon glyphicon-cutlery"></span>
-                Volg gebruiker
+                Volg deze chef
               </div>
           </div>
     </div>
