@@ -11,8 +11,9 @@
             <%= @pin.ingredients2 %></p>
             <p><strong>Bereidingswijze:</strong>
             <%= @pin.preparation %></p>
-            <p><strong>Toegevoegd door: </strong><%= @pin.user.name if @pin.user %></p>
-      </div>
+            <p><strong>Toegevoegd door:</strong> <%= @pin.user.name %></p>
+            <%= image_tag @pin.user.image %>
+            </div>
     </div>
   </div>
 </div>

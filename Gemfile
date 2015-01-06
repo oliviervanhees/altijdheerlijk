@@ -36,8 +36,7 @@ gem 'rename'
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.0'
 gem 'shareable'
-gem "socialization"
-
+gem 'socialization'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do

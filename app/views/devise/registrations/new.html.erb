@@ -28,7 +28,12 @@
 
       <div class="form-group">
         <%= f.label :email, "Email adres" %>
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        <%= f.email_field :email, autofocus: true, class: "form-control", :autofocus => true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :image, "Foto" %>
+        <%= f.file_field :image, class: "form-control", :autofocus => true %>
       </div>
 
       <div class="form-group">

@@ -15,10 +15,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
             <% if user_signed_in? %>  
-              <li><%= link_to "Mijn profiel", current_user %></li> 
+              <li><%= link_to "Mijn recepten", mijn_bewaarde_recepten_path %></li> 
               <li><%= link_to 'Recept toevoegen', new_pin_path %></li>
-              <li><%= link_to "Gebruikers volgen", users_volgen_path %></li> 
-              <li><%= link_to "Mijn settings", edit_user_registration_path %></li>
+              <li><%= link_to "Gebruikers", users_path %></li> 
+              <li><%= link_to "Mijn profiel", edit_user_registration_path %></li>
               <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
             <% else %>
               <li><%= link_to "Inloggen", new_user_session_path %></li>  

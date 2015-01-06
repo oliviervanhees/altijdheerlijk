@@ -3,11 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
-	has_many :pins
 
-  acts_as_followable
-  acts_as_follower
-  acts_as_liker
+  has_many :pins
 
 
 	def self.from_omniauth(auth)
@@ -18,5 +15,8 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0,20]
       end
   end
+
+
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
 end

@@ -19,6 +19,11 @@
           </div>
 
           <div class="form-group">
+          <%= f.label :image, "Foto" %>
+          <%= f.file_field :image, class: "form-control", :autofocus => true %>
+          </div>
+
+          <div class="form-group">
             <%= f.label :password, "Wachtwoord" %> <i>(laat leeg als je jouw wachtwoord niet wilt wijzigen)</i>
             <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
           </div>

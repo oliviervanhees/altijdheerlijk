@@ -9,6 +9,8 @@
           <%= link_to image_tag(user.image.url(:medium)), user %>
                 <div class="actions">
                 <p><%= link_to 'Bekijk profiel', user_path(user) %></p>
+                <span class="glyphicon glyphicon-cutlery"></span>
+                Volg gebruiker
               </div>
           </div>
     </div>
@@ -17,4 +19,3 @@
 <% else %>
 <%= render 'pages/login' %>
 <% end %>
-       
