@@ -12,7 +12,7 @@ def show
  end
 
 def index
-    @user = User.all.order("created_at DESC")
+    @user = User.all.order("updated_at DESC")
   	end
 end
 
