@@ -10,6 +10,7 @@
                 <div class="actions">
                	<strong><p><%= user.name %></p></p></strong>
                	<p><%= user.email %></p></p>
+                <p>Aantal recepten: <strong><%= user.pins.count %></strong></p>
                 <p><%= link_to 'Bekijk profiel van deze chef', user_path(user) %></p>
                 <span class="glyphicon glyphicon-cutlery"></span>
                 Volg deze chef

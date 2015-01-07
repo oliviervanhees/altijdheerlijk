@@ -3,11 +3,13 @@
   <div class="col-md-offset-0 col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading center">
-        <p>Bekijk hier de recepten van <strong><%=@user.name %>.</strong></p>
+        Bekijk hier de recepten van chef: 
+        <br></br><strong><%=@user.name %>.</strong>
         <div class="panel-body">
-          <%= image_tag @user.image.url(:thumb) %> 
-            <span class="glyphicon glyphicon-cutlery"></span>
-            Volg deze chef 
+          <%= image_tag @user.image.url(:thumb) %>
+            <br></br><span class="glyphicon glyphicon-cutlery"></span>
+            Volg deze chef</br>
+            <br>Aantal recepten van deze chef: <strong><%= @user.pins.count %></strong></br>
             </div>
           
         </div>
