@@ -16,6 +16,10 @@ def index
   	end
 end
 
+def user_params
+  params.require(:user).permit(:image)
+end
+
 
 	
 

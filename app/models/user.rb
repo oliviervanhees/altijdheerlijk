@@ -26,5 +26,5 @@ class User < ActiveRecord::Base
     end
   end
 
-  has_attached_file :image, :styles => { :medium => "300x300>", :square => "200x200>", :thumb => "100x100>" } 
+  has_attached_file :image, :styles => { :medium => "300x300>", :square => "200x200>", :thumb => "100x100>" }, :default_url => "/images/:style/default.jpg"
 end
