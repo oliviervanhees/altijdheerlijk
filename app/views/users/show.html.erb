@@ -1,18 +1,34 @@
-<%= image_tag @user.image.url(:thumb) %> 
-<h1><%= @user.name %></h1>
-<p>Bekijk hier de recepten van <%=@user.name %>.</p>
-
-<% if user_signed_in? %>  
-<div id="pins" class="transitions-enabled">
-  <% @user.pins.each do |pin| %>
-    <div class="box panel panel-default">
-        <%= link_to image_tag(pin.image.url(:medium)), pin %>
-          <div class="panel-body">
-          <p><%= pin.description %></p>
-          <p>Toegevoegd door: <strong><%= pin.user.name if pin.user %></p></strong>
-          <p><%= link_to 'Bekijk recept', pin_path(pin) %></p>
-          </div>
+<p><%= link_to 'Terug', users_path %></p>
+<div class="row">
+  <div class="col-md-offset-0 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <p>Bekijk hier de recepten van <strong><%=@user.name %>.</strong></p>
+        <div class="panel-body">
+          <%= image_tag @user.image.url(:thumb) %> 
+            <span class="glyphicon glyphicon-cutlery"></span>
+            Volg deze chef 
+            </div>
+          
+        </div>
+      </div>
     </div>
+  </div>
+
+<div id="pins" class="transitions-enabled">
+<% if user_signed_in? %> 
+  <% @user.pins.each do |pin| %>
+          <div class="box panel panel-default">
+          <%= link_to image_tag(pin.image.url(:medium)), pin %>
+              <div class="panel-body">
+              <strong>Recept:</strong>
+              <p><%= link_to pin.description, pin %></p></p>
+                <div class="actions">
+                <strong>Toegevoegd door:</strong>
+                <p><%= pin.user.name if pin.user %></strong></p>
+                </div>     
+              </div>
+          </div>
   <% end %>
 </div>
 
