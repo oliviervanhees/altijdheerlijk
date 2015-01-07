@@ -12,7 +12,7 @@
             <p><strong>Bereidingswijze:</strong>
             <%= @pin.preparation %></p>
             <p><strong>Toegevoegd door:</strong> <%= @pin.user.name %></p>
-            <%= image_tag @pin.user.image %>
+            <%= image_tag @pin.user.image.url(:thumb) %> 
             </div>
     </div>
   </div>

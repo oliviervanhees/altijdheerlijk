@@ -1,4 +1,4 @@
-<%= image_tag @user.image %>
+<%= image_tag @user.image.url(:thumb) %> 
 <h1><%= @user.name %></h1>
 <p>Bekijk hier de recepten van <%=@user.name %>.</p>
 

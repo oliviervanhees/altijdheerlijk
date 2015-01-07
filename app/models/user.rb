@@ -15,8 +15,5 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0,20]
       end
   end
-
-
-  has_attached_file :image, :styles => { :medium => "300x300>", :square => "200x200>", :thumb => "100x100>" }
-  
+  has_attached_file :image, :styles => { :medium => "300x300>", :square => "200x200>", :thumb => "100x100>" } 
 end
