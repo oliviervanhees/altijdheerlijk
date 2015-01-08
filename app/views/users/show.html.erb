@@ -11,12 +11,12 @@
             Volg deze chef</br>
             <br>Aantal recepten van deze chef: <strong><%= @user.pins.count %></strong></br>
             </div>
-          
         </div>
       </div>
     </div>
   </div>
 
+<h1>Toegevoegde recepten</h1>
 <div id="pins" class="transitions-enabled">
 <% if user_signed_in? %> 
   <% @user.pins.each do |pin| %>
@@ -34,11 +34,6 @@
   <% end %>
 </div>
 
-
-
 <% else %>
 <%= render 'pages/login' %>
 <% end %>
-
-
-

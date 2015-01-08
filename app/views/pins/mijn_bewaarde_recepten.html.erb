@@ -12,8 +12,7 @@
             <% if pin.user == current_user %>
               <div class="actions">
                 <p><span class="glyphicon glyphicon-heart"></span>
-                Mmmmmm! </p>
-                 
+                Mmmmmm! </p> 
                   <div class="btn-group.pull-right">
                   <%= link_to 'Wijzig', edit_pin_path(pin), class:"btn btn-default" %>
                   <%= link_to 'Verwijder', pin_path(pin), method: :delete, data: { confirm: 'Weet je het zeker?' }, class:"btn btn-default" %>
