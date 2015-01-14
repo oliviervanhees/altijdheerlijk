@@ -1,0 +1,27 @@
+<h1>Mijn favoriete recepten</h1>
+<p>Bekijk hier de recepten die jij lekker vindt op Altijd Heerlijk.</p>
+
+<% if user_signed_in? %>  
+<div id="pins" class="transitions-enabled">
+  <% @pins.each do |pin| %>
+    <div class="box panel panel-default">
+        <%= link_to image_tag(pin.image.url(:medium)), pin %>
+          <div class="panel-body">
+          <strong><p><%= pin.description %></p></strong>
+          <p><%= link_to 'Bekijk recept', pin_path(pin) %></p>
+          <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
+          <span class="glyphicon glyphicon-heart"></span>
+          <% end %>
+          <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-default" do %>
+          <spn class="glyphicon glyphicon-remove"></span>
+          <% end %><br></br>
+          </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+<% else %>
+<%= render 'pages/login' %>
+<% end %>

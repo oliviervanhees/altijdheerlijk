@@ -15,6 +15,7 @@ Altijdheerlijk::Application.routes.draw do
   get "kies_je_smaak" => "pages#kies_je_smaak"
   get "users_volgen" => "pages#users_volgen"
   get "mijn_bewaarde_recepten" => "pins#mijn_bewaarde_recepten"
+  get "mijn_favoriete_recepten" => "pins#mijn_favoriete_recepten"
   
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,6 +11,10 @@ class PinsController < ApplicationController
     @pins = current_user.pins
   end
 
+  def mijn_favoriete_recepten
+    @pins = current_user.liked_by_pins
+  end
+
   def show
   end
 
