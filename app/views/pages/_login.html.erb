@@ -6,19 +6,11 @@
   	 	</div>
 
 		<div class="panel-heading">
-  			Gebruik je Facebook account
+  			Log in met je Facebook account en ontvang heerlijke aanbevelingen voor recepten.
 		</div>
   
   		<div class="panel-body">
-     	 	<%= link_to "Login met Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-info" %><br/>
+     	 	<%= link_to "Log in", user_omniauth_authorize_path(:facebook), class: "btn btn-info" %><br/>
 		</div>
-
-		<div class="panel-body">
-			Of log in met je Altijd Heerlijk account: <%= link_to "Inloggen", new_user_session_path %> 
-		</div>
-
-		<div class="panel-heading">
-		Of maak zelf een account aan: <%= link_to "Aanmelden", new_user_registration_path %> 
-    	</div>   
 </div>
 </div>

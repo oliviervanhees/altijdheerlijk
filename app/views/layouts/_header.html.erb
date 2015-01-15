@@ -19,9 +19,7 @@
               <li><%= link_to "Chefs", users_path %></li> 
               <li><%= link_to 'Recept toevoegen', new_pin_path %></li>
               <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
-            <% else %>
-              <li><%= link_to "Inloggen", new_user_session_path %></li>  
-              <li><%= link_to "Aanmelden", new_user_registration_path %></li>  
+            
             <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
