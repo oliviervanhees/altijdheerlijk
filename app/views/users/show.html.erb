@@ -6,8 +6,8 @@
         Bekijk hier de recepten van chef: 
         <br></br><strong><%=@user.name %>.</strong>
         <div class="panel-body">
-          <%= image_tag @user.image.url(:thumb) %>
-            <br></br><span class="glyphicon glyphicon-cutlery"></span>
+          <%= link_to image_tag(user.image_file_name(:thumb)), user %>
+          <br></br><span class="glyphicon glyphicon-cutlery"></span>
             Volg deze chef</br>
             <br>Aantal recepten toegevoegd door deze chef: <strong><%= @user.pins.count %></strong></br>
             
