@@ -7,12 +7,18 @@ class PinsController < ApplicationController
     @pins = Pin.all.order("created_at DESC")
   end
 
-  def mijn_bewaarde_recepten
+  def my_pins
     @pins = current_user.pins
   end
 
-  def mijn_favoriete_recepten
-    @pins = current_user.pins
+  def like
+    @pin.liked_by current_user
+    redirect_to :back
+  end
+
+  def unlike
+    @pin.unliked_by current_user
+    redirect_to :back
   end
 
   def show
@@ -47,15 +53,7 @@ class PinsController < ApplicationController
     redirect_to pins_url
   end
 
-  def like
-    @pin.liked_by current_user
-    redirect_to :back
-  end
-
-  def unlike
-    @pin.unliked_by current_user
-    redirect_to :back
-  end
+  
 
 
   private

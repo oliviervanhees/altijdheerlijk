@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :pins
+
+  acts_as_voter
   
 	def self.from_omniauth(auth)
       where(provider2: auth.provider, uid2: auth.uid).first_or_create do |user|
