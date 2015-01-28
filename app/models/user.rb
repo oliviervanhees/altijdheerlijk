@@ -14,12 +14,9 @@ class User < ActiveRecord::Base
         user.uid2 = auth.uid
         user.email = auth.info.email
         user.name = auth.info.name
-        user.image_file_name = auth.info.image
         user.password = Devise.friendly_token[0,20]
       end
   end
 
-  has_attached_file :image_file_name, 
-  :styles => { :medium => '60x60#', :thumb => '300x300#' }, :default_style => :thumb,
-  :default_url => "/assets/:style/default.jpg"
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/default.jpg"
 end
