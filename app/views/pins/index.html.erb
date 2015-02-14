@@ -6,15 +6,14 @@
     <div class="box panel panel-default">
            <%= link_to image_tag(pin.image.url(:medium)), pin %>
           <div class="panel-body">
-          <p><%= link_to pin.description, pin_path(pin) %></p>
-          <div class="actions">
+          <b>Recept: </b><%= link_to pin.description, pin_path(pin) %>
+          <p>
+          <b>Van: </b><%= link_to image_tag(pin.user.image_file_name), @user %>
+           <div class="actions">
           <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
           <span class="glyphicon glyphicon-heart"></span>
           <% end %>
            </div>
-           <br>
-          <strong>Door: 
-          <p><%= link_to image_tag(pin.user.image_file_name), @user %></p>  
           </div>
     </div>
   <% end %>
