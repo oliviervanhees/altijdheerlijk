@@ -16,8 +16,10 @@
             <p><strong>Bereidingswijze:</strong>
             <%= @pin.preparation %></p>
             <p><strong>Toegevoegd door:</strong> 
-            <p><%= @pin.user.name %></p>       
-            </div>
+            <p><%= link_to image_tag(@pin.user.image_file_name), @user %></p>    
+            
+            </div>    
+        </div>
     </div>
   </div>
 </div>
