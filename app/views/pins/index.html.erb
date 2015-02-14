@@ -6,11 +6,11 @@
                 <div class="box panel panel-default">
                         <div class="panel-body">
                                   <p><b>Recept: </b><%= link_to pin.description, pin_path(pin) %></p>
-                                  <b>Door: </b>
+                                  <b>Toegevoegd door: </b>
                                   <br><%= link_to image_tag(pin.user.image_file_name), pin %></br>
                                   <br>
                                       <div class="actions">
-                                              <%= link_to like_pin_path(pin), method: :put, remote: true, class: "btn btn-default" do %>
+                                            <%= link_to like_pin_path(pin), method: :put, remote: true, class: "btn btn-default" do %>
                                             <span class="glyphicon glyphicon-heart"></span>
                                             Vind ik lekker!!!!
                                             <% end %>

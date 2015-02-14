@@ -7,7 +7,7 @@
                         <div class="panel-body">
                               <b>Recept: </b>
                               <p><%= link_to pin.description, pin_path(pin) %></p>
-                              <b>Door: </b>
+                              <b>Toegevoegd door: </b>
                               <p><%= link_to image_tag(pin.user.image_file_name), pin %></p>
                               <div class="actions">
                                      <%= link_to like_pin_path(pin), method: :put, remote: true, class: "btn btn-default" do %>

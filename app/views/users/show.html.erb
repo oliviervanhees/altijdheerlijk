@@ -1,36 +1,21 @@
 <p><%= link_to 'Terug', users_path %></p>
-<div class="row">
-  <div class="col-md-offset-0 col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading center">
-        Recepten van: <strong><%=@user.name %></strong>
-        <br>
-        <div class="panel-body">
-        <%= link_to image_tag(@user.image_file_name), @user %>        
-        </div>       
-        <br></br>Aantal recepten: <strong><%= @user.pins.count %></strong>  
-         </div> 
-      </div>
+<% if user_signed_in? %>  
+<h1><%=@user.name %></h1>
+<p>Bekijk hier de <strong><%= @user.pins.count %></strong>  recepten die <%=@user.name %> heeft toegevoegd aan Altijd Heerlijk.
+    <div id="pins" class="transitions-enabled">
+            <% @user.pins.each do |pin| %>
+                <div class="box panel panel-default">
+                    <div class="panel-body">
+                      <div class="actions">
+                      <b>Recept:</b>
+                      <p><%= link_to pin.description, pin %></p>
+                      <b>Toegevoegd door:</b>
+                      <p><%= link_to image_tag(@user.image_file_name), pin.user %></p>
+                      </div>   
+                    </div>
+                </div>
+            <% end %>
     </div>
-  </div>
-
-<h1>Toegevoegde recepten</h1>
-<div id="pins" class="transitions-enabled">
-<% if user_signed_in? %> 
-  <% @user.pins.each do |pin| %>
-          <div class="box panel panel-default">
-              <div class="panel-body">
-                <div class="actions">
-                <b>Recept:</b>
-                <p><%= link_to pin.description, pin %></p>
-                <b>Door:</b>
-                <p><%= link_to image_tag(@user.image_file_name), pin.user %></p>
-                </div>   
-              </div>
-          </div>
-  <% end %>
-</div>
-
 <% else %>
 <%= render 'pages/login' %>
 <% end %>
