@@ -1,5 +1,4 @@
 <h1>Mijn recepten</h1>
-
 <div class="row">
   <div class="col-md-offset-0 col-md-4">
     <div class="panel panel-default">
@@ -22,15 +21,15 @@
     <div class="box panel panel-default">
         <%= link_to image_tag(pin.image.url(:medium)), pin %>
           <div class="panel-body">
-          <strong><p><%= pin.description %></p></strong>
-          <p><%= link_to 'Bekijk recept', pin_path(pin) %></p>
+          <p><%= link_to pin.description, pin_path(pin) %></p>
             <% if pin.user == current_user %>
               <div class="actions">
-                <p><span class="glyphicon glyphicon-heart"></span>
-                Mmmmmm! </p> 
+               <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
+              <span class="glyphicon glyphicon-heart"></span>
+              <% end %>
                   <div class="btn-group.pull-right">
-                  <%= link_to 'Wijzig', edit_pin_path(pin), class:"btn btn-default" %>
-                  <%= link_to 'Verwijder', pin_path(pin), method: :delete, data: { confirm: 'Weet je het zeker?' }, class:"btn btn-default" %>
+                  <%= link_to 'Wijzig recept', edit_pin_path(pin) %>
+                  
                   </div>
               </div>
             <% end %>

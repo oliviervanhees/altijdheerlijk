@@ -13,7 +13,3 @@ def index
     @user = User.all.order("updated_at DESC")
   	end
 end
-
-
-	
-

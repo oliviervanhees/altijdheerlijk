@@ -7,6 +7,7 @@ Altijdheerlijk::Application.routes.draw do
   end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+
   resources :users
 
   root "pins#index"

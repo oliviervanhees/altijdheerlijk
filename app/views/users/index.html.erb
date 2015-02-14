@@ -10,10 +10,12 @@
                	<strong><p><%= user.name %></p></p></strong>
                 <p>Aantal recepten: <strong><%= user.pins.count %></strong></p>
                 <p><%= link_to 'Bekijk profiel van deze chef', user_path(user) %></p>
-                <span class="glyphicon glyphicon-cutlery"></span>
+                
+                <span class="glyphicon glyphicon-heart"></span>
                 Volg deze chef
-              </div>
-          </div>
+                
+                </div>
+    </div>
     </div>
   <% end %>
 </div>
