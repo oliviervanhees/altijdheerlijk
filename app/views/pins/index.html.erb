@@ -8,7 +8,7 @@
           <b>Recept: </b><%= link_to pin.description, pin_path(pin) %>
           <p>
           <strong>Door: </strong>
-          <%= link_to image_tag(pin.user.image_file_name), pin.user %>     
+          <%= link_to image_tag(pin.user.image_file_name), pin %>     
           <div class="actions">
           <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
           <span class="glyphicon glyphicon-heart"></span>

@@ -7,11 +7,7 @@
         <br>
         <div class="panel-body">
         <%= link_to image_tag(@user.image_file_name), @user %>        
-        </div>
-        
-        <span class="glyphicon glyphicon-heart"></span>
-        Volg deze chef
-        
+        </div>       
         <br></br>Aantal recepten: <strong><%= @user.pins.count %></strong>  
          </div> 
       </div>
@@ -29,10 +25,11 @@
                 <div class="actions">
                 <strong>Van:</strong>
                 <%= link_to image_tag(@user.image_file_name), pin.user %>  
-                </div>   
-              <br><%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
+                <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
               <span class="glyphicon glyphicon-heart"></span>
+              Vind ik lekker
               <% end %>  
+              </div>   
               </div>
           </div>
   <% end %>

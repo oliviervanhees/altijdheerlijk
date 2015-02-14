@@ -6,14 +6,10 @@
       	         <p><b>Recept: </b><%= @pin.description %></p>
                   <p><b>Toegevoegd door: </b></p>
                   <p><%= link_to image_tag(@pin.user.image_file_name), @user %></p>
-                  
                   <p><b>Favoriet recept van: </b></p>
-
                     <% @pin.votes_for.voters.each do |p| %> 
                      <p><%= link_to image_tag(p.image_file_name), @user %></p>
                     <% end %>
-
-                  <br></br>
                   <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
                     <span class="glyphicon glyphicon-heart"></span>
                     Vind ik lekker
