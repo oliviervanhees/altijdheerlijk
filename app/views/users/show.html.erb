@@ -28,8 +28,8 @@
               <strong>Recept:</strong>
               <p><%= link_to pin.description, pin %></p></p>
                 <div class="actions">
-                <strong>Toegevoegd door:</strong>
-                <p><%= pin.user.name if pin.user %></strong></p>
+                <strong>Van:</strong>
+                <%= link_to image_tag(@user.image_file_name), @user %>
                 </div>     
               </div>
           </div>

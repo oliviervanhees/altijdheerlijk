@@ -3,23 +3,24 @@
   <div class="col-md-offset-0 col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading center">
-      	<p><strong><%= @pin.description %></strong></p>
-      	<%= image_tag @pin.image.url(:medium) %>     
-      </div>
-      <div class="panel-body">
-        <b>Recept: </b><%=@pin.description %>
-        <p>
-        <b>Van: </b><%= link_to image_tag(@pin.user.image_file_name), @user %>
-         <div class="actions">
+      	<p><b>Recept: </b><%= @pin.description %></p>
+        <p><b>Van: </b><%= link_to image_tag(@pin.user.image_file_name), @user %></p>
+         
                    <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
               <span class="glyphicon glyphicon-heart"></span>
               Vind ik lekker
-            <% end %>
-            <p><strong>Ingrediënten:</strong>
-            <%= @pin.ingredients2 %></p>
-            <p><strong>Bereidingswijze:</strong>
-            <%= @pin.preparation %></p>
-            
+              <% end %>
+            </div>
+                  <div class="panel-body">
+                  <p><strong>Ingrediënten:</strong>
+                  <%= @pin.ingredients2 %></p>
+                  <p><strong>Bereidingswijze:</strong>
+                  <%= @pin.preparation %></p>
+                  <p><strong>Foto:</strong></p>
+                	<%= image_tag @pin.image.url(:medium) %>     
+      </div>
+   
+        
             </div>    
         </div>
     </div>
