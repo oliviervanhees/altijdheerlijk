@@ -6,6 +6,7 @@
       	         <p><b>Recept: </b><%= @pin.description %></p>
                   <p><b>Toegevoegd door: </b></p>
                   <p><%= link_to image_tag(@pin.user.image_file_name), @user %></p>
+                  <p><%= link_to 'Bekijk alle recepten van deze chef', @pin.user %></p>
                   <p><b>Favoriet recept van: </b></p>
                     <% @pin.votes_for.voters.each do |p| %> 
                      <p><%= link_to image_tag(p.image_file_name), @user %></p>
