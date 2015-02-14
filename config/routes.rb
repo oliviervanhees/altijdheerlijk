@@ -13,6 +13,7 @@ Altijdheerlijk::Application.routes.draw do
   root "pins#index"
   get "users_volgen" => "pages#users_volgen"
   get "my_pins" => "pins#my_pins"
+  get "my_favorites" => "pins#my_favorites"
   
   
   # The priority is based upon order of creation: first created -> highest priority.

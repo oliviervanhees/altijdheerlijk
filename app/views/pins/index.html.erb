@@ -1,29 +1,30 @@
-            <% if user_signed_in? %> 
-            <h1>Alle recepten</h1>
-            <p>Bekijk hier alle recepten die op Altijd Heerlijk te vinden zijn.</p> 
-            <div id="pins" class="transitions-enabled">
-              <% @pins.each do |pin| %>
+<% if user_signed_in? %> 
+    <h1>Alle recepten</h1>
+    <p>Bekijk hier alle recepten die op Altijd Heerlijk te vinden zijn.</p> 
+        <div id="pins" class="transitions-enabled">
+            <% @pins.each do |pin| %>
                 <div class="box panel panel-default">
-                      <div class="panel-body">
-                      <p><b>Recept: </b><%= link_to pin.description, pin_path(pin) %></p>
-                      <b>Door: </b>
-                      <br><%= link_to image_tag(pin.user.image_file_name), pin %></br>
-                      <br>
-
-                          <div class="actions">
-
-                          <%= link_to like_pin_path(pin), method: :put, remote: true, class: "btn btn-default" do %>
-                          <span class="glyphicon glyphicon-heart-empty"></span>
-                          Vind ik lekker
-                          <% end %>
-                         
-
-                          </div>
-
-                      </div>
+                        <div class="panel-body">
+                                  <p><b>Recept: </b><%= link_to pin.description, pin_path(pin) %></p>
+                                  <b>Door: </b>
+                                  <br><%= link_to image_tag(pin.user.image_file_name), pin %></br>
+                                  <br>
+                                      <div class="actions">
+                                              <%= link_to like_pin_path(pin), method: :put, remote: true, class: "btn btn-default" do %>
+                                            <span class="glyphicon glyphicon-heart"></span>
+                                            Vind ik lekker!!!!
+                                            <% end %>
+                                            <%= link_to unlike_pin_path(pin), method: :put, remote: true, class: "btn btn-default" do %>
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                            Niet mijn smaak
+                                            <% end %>
+                                      </div>
+                        </div>
                 </div>
-              <% end %>
-            </div>
-            <% else %>
-            <%= render 'pages/login' %>
             <% end %>
+        </div>
+
+
+<% else %>
+    <%= render 'pages/login' %>
+<% end %>
