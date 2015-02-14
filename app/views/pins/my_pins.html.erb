@@ -19,7 +19,7 @@
           <div class="panel-body">
             <b>Recept: </b><%= link_to pin.description, pin_path(pin) %>
             <p>
-            <b>Van: </b><%= link_to image_tag(pin.user.image_file_name), @user %>
+            <b>Door: </b><%= link_to image_tag(pin.user.image_file_name), pin.user %> 
            <% if pin.user == current_user %>
            <div class="actions">
               <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
