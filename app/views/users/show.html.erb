@@ -20,16 +20,12 @@
   <% @user.pins.each do |pin| %>
           <div class="box panel panel-default">
               <div class="panel-body">
-              <strong>Recept:</strong>
-              <p><%= link_to pin.description, pin %></p></p>
                 <div class="actions">
-                <strong>Van:</strong>
-                <%= link_to image_tag(@user.image_file_name), pin.user %>  
-                <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
-              <span class="glyphicon glyphicon-heart"></span>
-              Vind ik lekker
-              <% end %>  
-              </div>   
+                <b>Recept:</b>
+                <p><%= link_to pin.description, pin %></p>
+                <b>Door:</b>
+                <p><%= link_to image_tag(@user.image_file_name), pin.user %></p>
+                </div>   
               </div>
           </div>
   <% end %>
