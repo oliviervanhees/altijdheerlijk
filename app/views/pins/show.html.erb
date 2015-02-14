@@ -8,13 +8,19 @@
                   <p><%= link_to image_tag(@pin.user.image_file_name), @user %></p>
                   <p><%= link_to 'Bekijk alle recepten van deze chef', @pin.user %></p>
                   <p><b>Favoriet recept van: </b></p>
-                    <% @pin.votes_for.voters.each do |p| %> 
-                     <p><%= link_to image_tag(p.image_file_name), @user %></p>
-                    <% end %>
-                  <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
-                    <span class="glyphicon glyphicon-heart-empty"></span>
-                    Vind ik lekker
-                  <% end %>
+                      <% @pin.votes_for.voters.each do |p| %> 
+                       <p><%= link_to image_tag(p.image_file_name), @user %></p>
+                      <% end %>
+                    <div class="actions">
+                                            <%= link_to like_pin_path(@pin), method: :put, remote: true, class: "btn btn-default" do %>
+                                            <span class="glyphicon glyphicon-heart"></span>
+                                            Vind ik lekker!!!!
+                                            <% end %>
+                                            <%= link_to unlike_pin_path(@pin), method: :put, remote: true, class: "btn btn-default" do %>
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                            Niet mijn smaak
+                                            <% end %>
+                    </div>
       </div>
                   <div class="panel-body">
                   <p><strong>Ingrediënten:</strong>
