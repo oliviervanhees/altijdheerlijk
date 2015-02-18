@@ -13,12 +13,12 @@
                       <% end %>
                     <div class="actions">
                          
-                      <%= link_to like_pin_path(@pin), method: :put, remote: true, class: "btn btn-success btn-sm" do %>
+                      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success btn-sm" do %>
                       <span class="glyphicon glyphicon-heart"></span>
                       Vind ik lekker!!!!
                       <% end %>
                       <br></br>
-                      <%= link_to unlike_pin_path(@pin), method: :put, remote: true, class: "btn btn-danger btn-sm" do %>
+                      <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger btn-sm" do %>
                       <span class="glyphicon glyphicon-remove"></span>
                       Niet mijn smaak
                       <% end %>

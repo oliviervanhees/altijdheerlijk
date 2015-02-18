@@ -1,7 +1,6 @@
 <% if user_signed_in? %> 
     <h1>Alle recepten</h1>
     <p>Bekijk hier alle recepten die op Altijd Heerlijk te vinden zijn.</p> 
-        <div id="pins" class="transitions-enabled">
             <% @pins.each do |pin| %>
                 <div class="box panel panel-default">
                         <div class="panel-body">
@@ -10,12 +9,12 @@
                                   <br><%= link_to image_tag(pin.user.image_file_name), pin %></br>
                                   <br>
                                       <div class="actions">
-                                            <%= link_to like_pin_path(pin), method: :put, remote: true, class: "btn btn-success btn-sm" do %>
+                                            <%= link_to like_pin_path(pin), method: :put, class: "btn btn-success btn-sm" do %>
                                             <span class="glyphicon glyphicon-heart"></span>
                                             Vind ik lekker!!!!
                                             <% end %>
                                             <br></br>
-                                            <%= link_to unlike_pin_path(pin), method: :put, remote: true, class: "btn btn-danger btn-sm" do %>
+                                            <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-danger btn-sm" do %>
                                             <span class="glyphicon glyphicon-remove"></span>
                                             Niet mijn smaak
                                             <% end %>

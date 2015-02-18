@@ -39,6 +39,7 @@ gem 'shareable'
 gem 'socialization'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'mailchimp', '~> 0.0.9'
+gem 'koala', '~> 1.11.1'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
