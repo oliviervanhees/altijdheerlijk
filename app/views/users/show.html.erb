@@ -11,6 +11,10 @@
                       <p><%= link_to pin.description, pin %></p>
                       <b>Toegevoegd door:</b>
                       <p><%= link_to image_tag(@user.image_file_name), pin.user %></p>
+                      <p><b>Volg deze chef:</b></p>
+                      <%= link_to user_like_path(@user), method: :put, class: "btn btn-warning" do %>
+                      <span class="glyphicon glyphicon-star"></span>
+                      <% end %>
                       </div>   
                     </div>
                 </div>

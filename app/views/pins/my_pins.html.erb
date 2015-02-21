@@ -12,11 +12,12 @@
                               <div class="actions">
                                           <% if pin.user == current_user %>
                                                 <div class="btn-group.pull-right">
-                                                <%= link_to pin_path(pin), class: "btn btn-default btn-sm" do %>
+                                                <%= link_to pin_path(pin), class: "btn btn-info btn-sm" do %>
                                                 <span class="glyphicon glyphicon-fullscreen"></span>
                                                 Bekijk recept
                                                 <% end %>
-                                                <%= link_to edit_pin_path(pin), class: "btn btn-default btn-sm" do %>
+                                                <br></br>
+                                                <%= link_to edit_pin_path(pin), class: "btn btn-primary btn-sm" do %>
                                                 <span class="glyphicon glyphicon-edit"></span>
                                                 Wijzig recept
                                                 <% end %>
