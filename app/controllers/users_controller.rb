@@ -12,4 +12,10 @@ end
 def index
     @user = User.all.order("updated_at DESC")
   	end
-end
+
+def my_friends
+@user = User.all.order("updated_at DESC")
+  	end
+
+
+  end

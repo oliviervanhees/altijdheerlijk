@@ -17,7 +17,9 @@
             <% if user_signed_in? %>  
               <li><%= link_to "Mijn eigen recepten", my_pins_path %></li> 
               <li><%= link_to "Mijn favoriete recepten", my_favorites_path %></li> 
+              <li><%= link_to "Recepten van vrienden", my_friends_pins_path %></li> 
               <li><%= link_to "Chefs", users_path %></li> 
+              <li><%= link_to "Vrienden", my_friends_path %></li> 
               <li><%= link_to 'Recept toevoegen', new_pin_path %></li>
               <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
             <% else %>

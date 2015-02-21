@@ -11,9 +11,11 @@ Altijdheerlijk::Application.routes.draw do
   resources :users
 
   root "pins#index"
-  get "users_volgen" => "pages#users_volgen"
   get "my_pins" => "pins#my_pins"
   get "my_favorites" => "pins#my_favorites"
+  get "my_friends" => "users#my_friends"
+  get "my_friends_pins" => "pins#my_friends_pins"
+
   
   
   # The priority is based upon order of creation: first created -> highest priority.
