@@ -12,7 +12,10 @@
                               <div class="actions">
                                           <% if pin.user == current_user %>
                                                 <div class="btn-group.pull-right">
-                                                <%= link_to 'Wijzig recept', edit_pin_path(pin) %>
+                                                <%= link_to edit_pin_path(pin), class: "btn btn-default btn-sm" do %>
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                                Wijzig recept
+                                                <% end %>
                                                 </div>
                                           <% end %>
                               </div>

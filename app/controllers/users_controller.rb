@@ -14,7 +14,7 @@ def index
   	end
 
 def my_friends
-@user = User.all.order("updated_at DESC")
+	@user = User.all.order("updated_at DESC")
   	end
 
 
