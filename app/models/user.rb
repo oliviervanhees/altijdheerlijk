@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :pins
 
   acts_as_voter
+  acts_as_votable
   
 	def self.from_omniauth(auth)
       where(provider2: auth.provider, uid2: auth.uid).first_or_create do |user|
