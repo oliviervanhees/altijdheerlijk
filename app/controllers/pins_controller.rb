@@ -12,7 +12,7 @@ class PinsController < ApplicationController
   end
 
   def my_favorites
-    @pins = current_user.pins
+    @pins = current_user.find_liked_items
   end
 
   def my_friends_pins
