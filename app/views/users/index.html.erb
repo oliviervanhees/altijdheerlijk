@@ -8,10 +8,13 @@
                             <div class="actions">
                            	<strong><p><%= user.name %></p></strong>
                             <p><%= link_to image_tag(user.image_file_name), user %></p>
-                            <p>Aantal eigen recepten: <b><%= user.pins.count %></b></p>
-                            <p>Aantal favoriete recepten:
-                            <b></b></p>
-                            <p><%= link_to 'Bekijk profiel van deze chef', user_path(user) %></p>
+                            <p>Aantal recepten: <b><%= user.pins.count %></b></p>
+                            <div class="btn-group.pull-right">
+                            <%= link_to user_path(user), class: "btn btn-default btn-sm" do %>
+                            <span class="glyphicon glyphicon-fullscreen"></span>
+                            Bekijk recepten van deze chef
+                            <% end %>
+                            </div>
                             </div>
                     </div>
               </div>
