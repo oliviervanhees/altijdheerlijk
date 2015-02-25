@@ -81,6 +81,17 @@ Altijdheerlijk::Application.configure do
    # required for Heroku
   config.action_mailer.default_url_options = { :host => 'https://omr-altijdheerlijk.herokuapp.com/' }
 
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "sandboxb0b11e477cd44acd8745e1e908a6e83b.mailgun.org",
+  :user_name => "postmaster@sandboxb0b11e477cd44acd8745e1e908a6e83b.mailgun.org",
+  :password => "9dc2903ca4b3b4c9066195399601338f"
+  }
+
   # stores images on Amazon S3 for Heroku
   config.paperclip_defaults = {
     :storage => :s3,
