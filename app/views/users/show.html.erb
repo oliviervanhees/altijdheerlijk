@@ -1,9 +1,13 @@
 <p><%= link_to 'Terug', users_path %></p>
 <% if user_signed_in? %>  
-<h1><%=@user.name %></h1>
-    <p>Bekijk hier de <strong><%= @user.pins.count %> recepten</strong> die <%=@user.name %> heeft toegevoegd aan Altijd Heerlijk.
+<h1><%=@user.name %></h1> 
+  <%= link_to user_like_path(@user), method: :put, class: "btn btn-warning" do %>
+  <span class="glyphicon glyphicon-star"></span>
+  Volg deze chef
+  <% end %>  
+  <br></br><p>Bekijk hier de recepten van <b><%=@user.name %></b>.
     <div id="pins" class="transitions-enabled">
-            <% @user.pins.each do |pin| %>
+              <% @user.pins.each do |pin| %>
                 <div class="box panel panel-default">
                     <div class="panel-body">
                       <div class="actions">
@@ -11,10 +15,18 @@
                       <p><%= link_to pin.description, pin %></p>
                       <b>Toegevoegd door:</b>
                       <p><%= link_to image_tag(@user.image_file_name), pin.user %></p>
-                      <p><b>Volg deze chef:</b></p>
-                      <%= link_to user_like_path(@user), method: :put, class: "btn btn-warning" do %>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <% end %>
+                      </div>   
+                    </div>
+                </div>
+              <% end %>
+              <% @user.find_liked_items.each do |pin| %>
+                <div class="box panel panel-default">
+                    <div class="panel-body">
+                      <div class="actions">
+                      <b>Recept:</b>
+                      <p><%= link_to pin.description, pin %></p>
+                      <b>Toegevoegd door:</b>
+                      <p><%= link_to image_tag(@user.image_file_name), pin.user %></p>
                       </div>   
                     </div>
                 </div>

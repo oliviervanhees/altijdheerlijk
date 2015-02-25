@@ -10,13 +10,9 @@
                             <p><%= link_to image_tag(user.image_file_name), user %></p>
                             <p>Aantal recepten: <b><%= user.pins.count %></b></p>
                             <div class="btn-group.pull-right">
-                            <%= link_to user_path(user), class: "btn btn-info btn-sm" do %>
+                            <%= link_to user_path(user), class: "btn btn-success btn-sm" do %>
                             <span class="glyphicon glyphicon-fullscreen"></span>
-                            Bekijk recepten
-                            <% end %>
-                            <p><b>Volg deze chef:</b></p>
-                            <%= link_to user_like_path(@user), method: :put, class: "btn btn-warning" do %>
-                            <span class="glyphicon glyphicon-star"></span>
+                            Bekijk profiel
                             <% end %>
                             </div>
                             </div>
