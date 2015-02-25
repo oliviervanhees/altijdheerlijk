@@ -1,48 +1,44 @@
-<p><%= link_to 'Terug', pins_path %></p>
-<div class="row">
-  <div class="col-md-offset-0 col-md-4">
+<%= link_to 'Terug', pins_path %>
+<h1><%= @pin.description %></h1>
+  <div class="col-md-offset-0 col-md-14">
     <div class="panel panel-default">
       <div class="panel-heading center">
-      	         <p><b>Recept: </b><%= @pin.description %></p>
-                  <p><b>Toegevoegd door: </b></p>
-                  <p><%= link_to image_tag(@pin.user.image_file_name), @user %></p>
-                  <p><%= link_to 'Bekijk alle recepten van deze chef', @pin.user %></p>
-                  <p><b>Favoriet recept van: </b></p>
-                      <% @pin.votes_for.voters.each do |p| %> 
-                        <p><%= link_to image_tag(p.image_file_name), @user %></p>
-                      <% end %>
-                      <div class="actions">
-                        <b>Wat vind je van dit recept?</b><br></br>
-                        <p>   
-                        <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
-                        <span class="glyphicon glyphicon-heart"></span>
-                        <% end %>
-                        <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
-                        <span class="glyphicon glyphicon-remove"></span>
-                        <% end %>
-                        </p>        
-                      </div>
-      </div>
-          <div class="panel-body">
-          <p><strong>Ingrediënten:</strong>
-          <%= @pin.ingredients2 %></p>
-          <p><strong>Bereidingswijze:</strong>
-          <%= @pin.preparation %></p>
-          <p><strong>Foto van recept:</strong></p>
-        	<%= image_tag @pin.image.url(:medium) %>  <br>   
-          </div>
-          <% if @pin.user == current_user %>
-                <div class="btn-group.pull-right">
-                <%= link_to edit_pin_path(@pin), class: "btn btn-primary btn-sm" do %>
-                <span class="glyphicon glyphicon-edit"></span>
-                Wijzig recept
+         <p><b>Toegevoegd door: </b></p>
+          <p><%= link_to image_tag(@pin.user.image_file_name), @pin.user %></p>  
+            <p><b>Favoriet recept van: </b></p>
+                <% @pin.votes_for.voters.each do |p| %> 
+                  <p><%= link_to image_tag(p.image_file_name), @user %></p>
                 <% end %>
-                </div>
-          <% end %>
-        </div>    
+              <b>Wat vind je van dit recept?</b><br></br>
+                  <p><%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
+                    <span class="glyphicon glyphicon-heart"></span>
+                  <% end %>
+                  <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
+                    <span class="glyphicon glyphicon-remove"></span>
+                  <% end %></p>        
       </div>
     </div>
   </div>
-</div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+          <p><strong>Ingrediënten:</strong>
+            <%= @pin.ingredients2 %></p>
+          <p><strong>Bereidingswijze:</strong>
+            <%= @pin.preparation %></p>
+          <p><strong>Foto van recept:</strong></p>
+        	 <%= image_tag @pin.image.url(:medium) %><br>   
+          <br></br>
+            <% if @pin.user == current_user %>
+                  <div class="btn-group.pull-right">
+                    <%= link_to edit_pin_path(@pin), class: "btn btn-primary btn-sm" do %>
+                      <span class="glyphicon glyphicon-edit"></span>
+                      Wijzig recept
+                    <% end %>
+                  </div>
+            <% end %>
+      </div>
+    </div>    
+  </div>
+     
 
 
