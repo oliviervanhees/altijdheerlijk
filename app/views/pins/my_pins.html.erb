@@ -1,6 +1,6 @@
 <% if user_signed_in? %>  
     <h1>Mijn recepten</h1>
-    <p>Bekijk hier jouw recepten die je zelf hebt toegevoegd aan Altijd Heerlijk.</p> 
+    <p>Bekijk hier de <strong><%= @current_user.pins.count %> recepten</strong> die je zelf hebt toegevoegd aan Altijd Heerlijk.</p> 
           <div id="pins" class="transitions-enabled">
             <% @pins.each do |pin| %>
                   <div class="box panel panel-default">

@@ -21,18 +21,26 @@
                         <span class="glyphicon glyphicon-remove"></span>
                         <% end %>
                         </p>        
-                    </div>
+                      </div>
       </div>
-                  <div class="panel-body">
-                  <p><strong>Ingrediënten:</strong>
-                  <%= @pin.ingredients2 %></p>
-                  <p><strong>Bereidingswijze:</strong>
-                  <%= @pin.preparation %></p>
-                  <p><strong>Foto van recept:</strong></p>
-                	<%= image_tag @pin.image.url(:medium) %>  <br>   
-                  </div>
-            </div>    
-        </div>
+          <div class="panel-body">
+          <p><strong>Ingrediënten:</strong>
+          <%= @pin.ingredients2 %></p>
+          <p><strong>Bereidingswijze:</strong>
+          <%= @pin.preparation %></p>
+          <p><strong>Foto van recept:</strong></p>
+        	<%= image_tag @pin.image.url(:medium) %>  <br>   
+          </div>
+          <% if @pin.user == current_user %>
+                <div class="btn-group.pull-right">
+                <%= link_to edit_pin_path(@pin), class: "btn btn-primary btn-sm" do %>
+                <span class="glyphicon glyphicon-edit"></span>
+                Wijzig recept
+                <% end %>
+                </div>
+          <% end %>
+        </div>    
+      </div>
     </div>
   </div>
 </div>

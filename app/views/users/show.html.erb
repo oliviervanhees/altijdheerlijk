@@ -1,7 +1,7 @@
 <p><%= link_to 'Terug', users_path %></p>
 <% if user_signed_in? %>  
 <h1><%=@user.name %></h1>
-    <p>Bekijk hier de <strong><%= @user.pins.count %></strong>  recepten die <%=@user.name %> heeft toegevoegd aan Altijd Heerlijk.
+    <p>Bekijk hier de <strong><%= @user.pins.count %> recepten</strong> die <%=@user.name %> heeft toegevoegd aan Altijd Heerlijk.
     <div id="pins" class="transitions-enabled">
             <% @user.pins.each do |pin| %>
                 <div class="box panel panel-default">
