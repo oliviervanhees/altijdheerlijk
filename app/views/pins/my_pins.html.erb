@@ -10,19 +10,19 @@
                               <b>Toegevoegd door: </b>
                               <p><%= link_to image_tag(pin.user.image_file_name), pin %></p>
                               <div class="actions">
-                                          <% if pin.user == current_user %>
-                                                <div class="btn-group.pull-right">
-                                                <%= link_to pin_path(pin), class: "btn btn-info btn-sm" do %>
-                                                <span class="glyphicon glyphicon-fullscreen"></span>
-                                                Bekijk recept
-                                                <% end %>
-                                                <br></br>
-                                                <%= link_to edit_pin_path(pin), class: "btn btn-primary btn-sm" do %>
-                                                <span class="glyphicon glyphicon-edit"></span>
-                                                Wijzig recept
-                                                <% end %>
-                                                </div>
-                                          <% end %>
+                                <% if pin.user == current_user %>
+                                      <div class="btn-group.pull-right">
+                                      <%= link_to pin_path(pin), class: "btn btn-info btn-sm" do %>
+                                      <span class="glyphicon glyphicon-fullscreen"></span>
+                                      Bekijk recept
+                                      <% end %>
+                                      <br></br>
+                                      <%= link_to edit_pin_path(pin), class: "btn btn-primary btn-sm" do %>
+                                      <span class="glyphicon glyphicon-edit"></span>
+                                      Wijzig recept
+                                      <% end %>
+                                      </div>
+                                <% end %>
                               </div>
                         </div>
                   </div>

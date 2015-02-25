@@ -28,4 +28,16 @@ Altijdheerlijk::Application.configure do
   config.assets.debug = true
   # required for Heroku
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "sandboxb0b11e477cd44acd8745e1e908a6e83b.mailgun.org",
+  :user_name => "postmaster@sandboxb0b11e477cd44acd8745e1e908a6e83b.mailgun.org",
+  :password => "9dc2903ca4b3b4c9066195399601338f"
+  }
+
 end

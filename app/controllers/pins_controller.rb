@@ -42,7 +42,8 @@ class PinsController < ApplicationController
   def create
     @pin = current_user.pins.build(pin_params)
     if @pin.save
-      redirect_to @pin, notice: 'Gerecht is toegevoegd.'
+      ModelMailer.new_pin_notification(@pin).deliver
+      redirect_to @pin, notice: 'Jouw recept is toegevoegd aan Altijd heerlijk.'
     else
       render action: 'new'
     end
@@ -50,7 +51,7 @@ class PinsController < ApplicationController
 
   def update
     if @pin.update(pin_params)
-      redirect_to @pin, notice: 'Gerecht is gewijzigd.'
+      redirect_to @pin, notice: 'Recept is gewijzigd.'
     else
       render action: 'edit'
     end
