@@ -1,28 +1,29 @@
 <% if user_signed_in? %>  
 <h1>Mijn favoriete chefs</h1>
 <p>Bekijk hier al jouw favoriete chefs op Altijd Heerlijk. <br>
-    
-
-<div id="pins" class="transitions-enabled">
-  <% @user.each do |user| %>
-        <div class="box panel panel-default">
-                <div class="panel-body">
-                   <div class="actions">
-                      <p><b>Chef: </b><%= link_to user.name, user_path(user) %></p></strong>
-                      <p><%= link_to image_tag(user.image_file_name), user %></p>
-                      <p>Aantal recepten: <b><%= user.pins.count %></b></p>
-                      <div class="btn-group.pull-right">
-                      <%= link_to user_path(user), class: "btn btn-success btn-sm" do %>
-                      <span class="glyphicon glyphicon-fullscreen"></span>
-                      Bekijk profiel
-                      <% end %>
-                      </div>
-                      </div>
-                </div>
-          </div>
+  <div>
+    <h2>Followers</h2>
+    <% if @followers.present? && @followers.size > 0 %>
+      <% @followers.each do |user| %>
+        <div class="box panel panel-default" id = "user_<%= user.id %>">
+          <%= render :partial => 'users/user', :locals => {:user => user} %>
+        </div>
+      <% end %>
+    <% else %>
+      <p> You currently have no followers</p>
     <% end %>
-</div>
-<strong> Tip: </strong> Nodig je vrienden uit op Facebook om ook hun recepten toe te voegen aan Altijd Heerlijk. <iframe src="//www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fomr-altijdheerlijk.herokuapp.com%2F&amp;layout=button&amp;appId=302173199991610" scrolling="no" frameborder="10" style="border:none; overflow:hidden;" allowTransparency="true"></iframe>
-<% else %>
-<%= render 'pages/login' %>
+  </div>
+
+  <div>
+    <h2>Followings</h2>
+    <% if @followings.present? && @followings.size > 0 %>
+      <% @followings.each do |user| %>
+        <div class="box panel panel-default" id = "user_<%= user.id %>">
+          <%= render :partial => 'users/user', :locals => {:user => user} %>
+        </div>
+      <% end %>
+    <% else %>
+      <p> You currently have no followings</p>
+    <% end %>
+  </div>
 <% end %>

@@ -9,12 +9,13 @@ class UsersController < ApplicationController
 	end
 
 	def index
-	    @user = User.all.order("updated_at DESC")
-	  	end
+	  @user = User.all.order("updated_at DESC")
+	end
 
 	def my_friends
-		@user = User.all.order("updated_at DESC")
-	  	end
+		@followers = current_user.followers.collect(&:user)
+		@followings = current_user.followings
+	end
 
 	def like
 		@user.liked_by current_user
@@ -24,6 +25,10 @@ class UsersController < ApplicationController
 	def unlike
 		@user.unliked_by current_user
 		redirect_to :back
+	end
+
+	def feeds
+		@pins =  Pin.where(user_id: current_user.followings.pluck(:id))
 	end
 
 end

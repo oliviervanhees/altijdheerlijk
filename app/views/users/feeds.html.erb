@@ -1,0 +1,11 @@
+<h2>Reciepes of Friends</h2>
+<% if @pins.present? && @pins.to_a.size > 0 %>
+	<% @pins.each do |pin| %>
+		<b>Recept: </b>
+		<p><%= link_to pin.description, pin_path(pin) %></p>
+		<b>Toegevoegd door: </b>
+		<p><%= link_to image_tag(pin.user.image_file_name), pin %></p>
+	<% end %>
+<% else %>
+	<p> You currently have no feeds </p>
+<% end %>

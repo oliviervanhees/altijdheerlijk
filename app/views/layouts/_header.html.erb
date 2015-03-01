@@ -19,7 +19,8 @@
               <li><%= link_to "Mijn favoriete recepten", my_favorites_path %></li> 
               <li><%= link_to "Recepten van vrienden", my_friends_pins_path %></li> 
               <li><%= link_to "Alle chefs", users_path %></li> 
-              <li><%= link_to "Mijn favoriete chefs", my_friends_path %></li> 
+              <li><%= link_to "Mijn favoriete chefs", my_friends_path %></li>
+              <li><%= link_to "Feeds", feeds_path %></li> 
               <li><%= link_to 'Recept toevoegen', new_pin_path %></li>
               <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
             <% else %>
