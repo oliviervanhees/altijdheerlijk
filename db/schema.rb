@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107150228) do
+ActiveRecord::Schema.define(version: 20150226190043) do
 
   create_table "follows", force: true do |t|
-    t.string   "follower_type"
-    t.integer  "follower_id"
-    t.string   "followable_type"
+    t.integer  "user_id"
     t.integer  "followable_id"
+    t.string   "followable_type"
     t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
-  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
+  add_index "follows", ["followable_id", "followable_type"], name: "index_follows_on_followable_id_and_followable_type"
+  add_index "follows", ["user_id", "followable_id", "followable_type"], name: "index_follows_on_user_id_and_followable_id_and_followable_type", unique: true
 
   create_table "likes", force: true do |t|
     t.string   "liker_type"
@@ -76,9 +76,6 @@ ActiveRecord::Schema.define(version: 20150107150228) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "facebook_id"
     t.string   "name"
     t.string   "provider2"
     t.string   "uid2"

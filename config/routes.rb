@@ -1,4 +1,4 @@
-Altijdheerlijk::Application.routes.draw do
+  Altijdheerlijk::Application.routes.draw do
   resources :pins do
     member do
       put "like", to: "pins#like"
@@ -8,6 +8,8 @@ Altijdheerlijk::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
+ match '/users/:id/follow' => 'follows#create', :as => :user_follow, :via => [:post]
+ match '/users/:id/unfollow' => 'follows#destroy', :as => :user_unfollow, :via => [:delete]
   resources :users do
       put "like", to: "users#like"
       put "unlike", to: "users#unlike"
@@ -20,7 +22,9 @@ Altijdheerlijk::Application.routes.draw do
   get "my_favorites" => "pins#my_favorites"
   get "my_friends" => "users#my_friends"
   get "my_friends_pins" => "pins#my_friends_pins"
+ 
 
+  get '/feeds' => 'users#feeds', :as => :feeds
   
   
   # The priority is based upon order of creation: first created -> highest priority.

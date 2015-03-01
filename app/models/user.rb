@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :pins
   has_many :users
+  has_many :follows, :dependent => :destroy
+  has_many :followers, :class_name => 'Follow', :dependent => :destroy, :as => :followable
+  has_many :followings, :through => :follows, :source => :followable, :source_type => 'User'
 
   acts_as_voter
   acts_as_votable
@@ -20,6 +23,17 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0,20]
       end
   end
+
+  def follow!(user, source=nil)
+    follow = self.follows.new
+    follow.followable = user
+    follow.save!
+  end
+
+  def following?(follow)
+    follow = self.follows.get_follow(follow)
+    follow.size > 0 ? true : false
+  end 
 
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/default.jpg"
 end
