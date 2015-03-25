@@ -1,6 +1,6 @@
 <% if user_signed_in? %>  
-<h1>Chefs die ik volg</h1>
-<p>Bekijk hier alle chefs die jij volgt op Altijd Heerlijk. <br>
+<h1>Chefs die mij volgen</h1>
+<p>Bekijk hier alle chefs die jou volgen op Altijd Heerlijk. <br>
    <% if @followings.present? && @followings.size > 0 %>
    <div id="pins" class="transitions-enabled">
             <% @followings.each do |user| %>
@@ -9,6 +9,9 @@
                     </div> 
             <% end %>
         <% else %>
-          <p><b> Je volgt nog geen andere chefs, bekijk alle chefs op Altijd Heerlijk en volg jouw favoriete chef.</p></b>
+          <p><b>Er is nog niemand die jouw volgt, nodig nu vrienden uit om jou te volgen.</p></b>
         <% end %> 
 <% end %> 
+
+  
+      

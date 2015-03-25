@@ -15,12 +15,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
             <% if user_signed_in? %>  
-              <li><%= link_to "Mijn eigen recepten", my_pins_path %></li> 
-              <li><%= link_to "Mijn favoriete recepten", my_favorites_path %></li> 
-              <li><%= link_to "Recepten van vrienden", my_friends_pins_path %></li> 
+              <li><%= link_to "Mijn toegevoegde recepten", my_pins_path %></li> 
+              <li><%= link_to "Mijn bewaarde recepten", my_favorites_path %></li> 
+              <li><%= link_to "Mijn vrienden", my_friends_path %></li>
+              <li><%= link_to "Mijn volgers", followers_path %></li>
               <li><%= link_to "Alle chefs", users_path %></li> 
-              <li><%= link_to "Mijn favoriete chefs", my_friends_path %></li>
-              <li><%= link_to "Feeds", feeds_path %></li> 
+              <li><%= link_to "Alle recepten", pins_path %></li> 
               <li><%= link_to 'Recept toevoegen', new_pin_path %></li>
               <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
             <% else %>

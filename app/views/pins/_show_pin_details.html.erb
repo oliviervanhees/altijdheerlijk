@@ -1,0 +1,22 @@
+  <div id="pins" class="transitions-enabled">
+    <% @pins.each do |pin| %>
+          <div class="box panel panel-default">
+                  <div class="panel-body">
+                            <p><b><%= link_to pin.description, pin_path(pin) %></b></p>
+                            <br><%= link_to image_tag(pin.user.image_file_name), pin %></br>
+                              <br></br>
+                                <div class="actions">
+                                      <%= link_to pin_path(@pin) , class: "btn btn-info btn-sm" do %>
+                                      <span class="glyphicon glyphicon-fullscreen"></span>
+                                      Bekijk recept
+                                      <% end %>
+                                      <br></br>
+                                      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success btn-sm" do %>
+                                      <span class="glyphicon glyphicon-heart"></span>
+                                      Bewaar recept
+                                      <% end %>
+                                </div>
+                  </div>
+          </div>
+    <% end %>
+  </div>

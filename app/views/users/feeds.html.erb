@@ -1,11 +1,7 @@
-<h2>Reciepes of Friends</h2>
+<h1>Recepten van jouw vrienden</h1>
+<p>Bekijk hier de recepten die je vrienden lekker vinden.</p> 
 <% if @pins.present? && @pins.to_a.size > 0 %>
-	<% @pins.each do |pin| %>
-		<b>Recept: </b>
-		<p><%= link_to pin.description, pin_path(pin) %></p>
-		<b>Toegevoegd door: </b>
-		<p><%= link_to image_tag(pin.user.image_file_name), pin %></p>
-	<% end %>
+<%= render 'pins/show_pin_details' %>  
 <% else %>
-	<p> You currently have no feeds </p>
+	<p> Je hebt nog geen suggesties, voeg eerst vrienden toe om persoonlijke suggesties te ontvangen. </p>
 <% end %>

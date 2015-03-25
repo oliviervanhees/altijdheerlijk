@@ -1,10 +1,7 @@
 <p><%= link_to 'Terug', users_path %></p>
 <% if user_signed_in? %>  
 <h1><%=@user.name %></h1> 
-  <%= link_to user_like_path(@user), method: :put, class: "btn btn-warning" do %>
-  <span class="glyphicon glyphicon-star"></span>
-  Volg deze chef
-  <% end %>  
+  <%= link_to "Volg deze chef", user_follow_path(@user), :method => :post, :class => "btn btn-sm btn-success", :remote => true %>
   <br></br><p>Bekijk hier de recepten van <b><%=@user.name %></b>.
     <div id="pins" class="transitions-enabled">
               <% @user.pins.each do |pin| %>

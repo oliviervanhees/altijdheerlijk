@@ -17,13 +17,12 @@
 
 
 
-  root "pins#index"
+  root "users#feeds"
   get "my_pins" => "pins#my_pins"
   get "my_favorites" => "pins#my_favorites"
   get "my_friends" => "users#my_friends"
-  get "my_friends_pins" => "pins#my_friends_pins"
- 
-
+  get "followers" => "users#followers"
+  
   get '/feeds' => 'users#feeds', :as => :feeds
   
   

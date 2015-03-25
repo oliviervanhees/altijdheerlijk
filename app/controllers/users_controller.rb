@@ -13,8 +13,11 @@ class UsersController < ApplicationController
 	end
 
 	def my_friends
-		@followers = current_user.followers.collect(&:user)
 		@followings = current_user.followings
+	end
+
+	def followers
+		@followers = current_user.followers.collect(&:user)
 	end
 
 	def like

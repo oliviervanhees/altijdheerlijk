@@ -15,10 +15,6 @@ class PinsController < ApplicationController
     @pins = current_user.find_liked_items
   end
 
-  def my_friends_pins
-    @pins = current_user.pins
-  end
-
   def like
     @pin.liked_by current_user
     redirect_to :back

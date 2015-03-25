@@ -1,5 +1,10 @@
 <%= link_to 'Terug', pins_path %>
 <h1><%= @pin.description %></h1>
+      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success btn-sm" do %>
+      <span class="glyphicon glyphicon-heart"></span>
+      Bewaar recept
+      <% end %>
+      <br></br>
   <div class="col-md-offset-0 col-md-14">
     <div class="panel panel-default">
       <div class="panel-heading center">
@@ -8,14 +13,7 @@
             <p><b>Favoriet recept van: </b></p>
                 <% @pin.votes_for.voters.each do |p| %> 
                   <p><%= link_to image_tag(p.image_file_name), @user %></p>
-                <% end %>
-              <b>Wat vind je van dit recept?</b><br></br>
-                  <p><%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
-                    <span class="glyphicon glyphicon-heart"></span>
-                  <% end %>
-                  <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
-                    <span class="glyphicon glyphicon-remove"></span>
-                  <% end %></p>        
+                <% end %>  
       </div>
     </div>
   </div>
@@ -28,14 +26,13 @@
           <p><strong>Foto van recept:</strong></p>
         	 <%= image_tag @pin.image.url(:medium) %><br>   
           <br></br>
-            <% if @pin.user == current_user %>
-                  <div class="btn-group.pull-right">
-                    <%= link_to edit_pin_path(@pin), class: "btn btn-primary btn-sm" do %>
+                 <div class="btn-group.pull-right">
+                    <%= link_to edit_pin_path(@pin), class: "btn btn-warning btn-sm" do %>
                       <span class="glyphicon glyphicon-edit"></span>
                       Wijzig recept
                     <% end %>
                   </div>
-            <% end %>
+         
       </div>
     </div>    
   </div>

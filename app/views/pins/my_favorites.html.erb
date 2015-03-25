@@ -1,25 +1,7 @@
 <% if user_signed_in? %>  
   <h1>Mijn favoriete recepten</h1>
   <p>Bekijk hier jouw  favoriete recepten.</p> 
-      <div id="pins" class="transitions-enabled">
-          <% @pins.each do |pin| %>
-                <div class="box panel panel-default">
-                    <div class="panel-body">
-                      <b>Recept: </b>
-                      <p><%= link_to pin.description, pin_path(pin) %></p>
-                      <b>Toegevoegd door: </b>
-                      <p><%= link_to image_tag(pin.user.image_file_name), pin %></p>
-                      <div class="actions">
-                      <%= link_to pin_path(pin), class: "btn btn-info btn-sm" do %>
-                      <span class="glyphicon glyphicon-fullscreen"></span>
-                      Bekijk recept
-                      <% end %>
-                      
-                      </div>
-                    </div>
-                </div>
-          <% end %>
-      </div>
+      <%= render 'pins/show_pin_details' %>  
 <% else %>
   <%= render 'pages/login' %>
 <% end %>

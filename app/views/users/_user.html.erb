@@ -6,15 +6,15 @@
     <p><%= link_to image_tag(user.image_file_name), user %></p>
     <p>Aantal recepten: <b><%= user.pins.count %></b></p>
     <div class="btn-group.pull-right">
-      <%= link_to user_path(user), class: "btn btn-success btn-sm" do %>
+      <%= link_to user_path(user), class: "btn btn-info btn-sm" do %>
       <span class="glyphicon glyphicon-fullscreen"></span>
       Bekijk profiel
       <% end %>
       <% if current_user && current_user != user %>
         <% if current_user.following?(user) %>
-          <%= link_to "UnFollow", user_unfollow_path(user), :method => :delete, :class => "btn btn-danger", :remote => true %>
+          <%= link_to "Stop volgen", user_unfollow_path(user), :method => :delete, :class => "btn btn-sm btn-danger", :remote => true %>
         <% else %>
-          <%= link_to "Follow", user_follow_path(user), :method => :post, :class => "btn btn-success", :remote => true %>
+          <%= link_to "Chef volgen", user_follow_path(user), :method => :post, :class => "btn btn-sm btn-success", :remote => true %>
         <% end %>
       <% end %>
     </div>
