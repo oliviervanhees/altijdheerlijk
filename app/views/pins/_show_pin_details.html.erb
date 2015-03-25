@@ -3,7 +3,7 @@
           <div class="box panel panel-default">
                   <div class="panel-body">
                             <p><b>Recept:</b> <%= link_to pin.description, pin_path(pin) %></p>
-                            <br><%= link_to image_tag(pin.image.url(:medium)), pin %></br>
+                            <br><%= link_to image_tag(pin.image.url), pin %></br>
                               <br></br>
                                 <div class="actions">
                                       <%= link_to pin_path(pin) , class: "btn btn-info btn-sm" do %>
