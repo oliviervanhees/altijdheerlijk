@@ -19,8 +19,8 @@
               <li><%= link_to "Mijn bewaarde recepten", my_favorites_path %></li> 
               <li><%= link_to "Mijn vrienden", my_friends_path %></li>
               <li><%= link_to "Mijn volgers", followers_path %></li>
-              <li><%= link_to "Alle chefs", users_path %></li> 
-              <li><%= link_to "Alle recepten", pins_path %></li> 
+              <li><%= link_to "Zoek vrienden", users_path %></li> 
+              <li><%= link_to "Zoek recepten", pins_path %></li> 
               <li><%= link_to 'Recept toevoegen', new_pin_path %></li>
               <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
             <% else %>

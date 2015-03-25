@@ -1,6 +1,7 @@
 <% if user_signed_in? %>  
-<h1>Alle chefs</h1>
-<p>Bekijk hier de <strong><%= @user.count %> chefs </strong> die lid zijn van Altijd Heerlijk. <br>
+<h1>Zoek vrienden</h1>
+<p>Bekijk hier de <strong><%= @user.count %> chefs </strong> die lid zijn van Altijd Heerlijk. 
+	<u>Tip: Volg jouw favoriete chefs.</u><br>
     <div id="pins" class="transitions-enabled">
       <% @user.each do |user| %>
         <div class="box panel panel-default" id = "user_<%= user.id %>">
