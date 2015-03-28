@@ -17,7 +17,8 @@ class PinsController < ApplicationController
 
   def like
     @pin.liked_by current_user
-    redirect_to :back
+    redirect_to :back, notice: 'Je hebt dit recept nu toegevoegd aan jouw bewaarde recepten.'
+    ModelMailer.new_like_notification(@pin).deliver
   end
 
   def unlike

@@ -1,7 +1,10 @@
 <p><%= link_to 'Terug', users_path %></p>
 <% if user_signed_in? %>  
 <h1><%=@user.name %></h1> 
-  <%= link_to "Volg deze chef", user_follow_path(@user), :method => :post, :class => "btn btn-sm btn-success", :remote => true %>
+
+<%= link_to "Stop volgen", user_unfollow_path(@user), :method => :delete, :class => "btn btn-sm btn-danger", :remote => true %>   
+
+
   <br></br><p>Bekijk hier de recepten van <b><%=@user.name %></b>.
     <div id="pins" class="transitions-enabled">
               <% @user.pins.each do |pin| %>

@@ -8,14 +8,10 @@
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
- match '/users/:id/follow' => 'follows#create', :as => :user_follow, :via => [:post]
- match '/users/:id/unfollow' => 'follows#destroy', :as => :user_unfollow, :via => [:delete]
-  resources :users do
-      put "like", to: "users#like"
-      put "unlike", to: "users#unlike"
-    end
+  match '/users/:id/follow' => 'follows#create', :as => :user_follow, :via => [:post]
+  match '/users/:id/unfollow' => 'follows#destroy', :as => :user_unfollow, :via => [:delete]
 
-
+  resources :users 
 
   root "users#feeds"
   get "my_pins" => "pins#my_pins"

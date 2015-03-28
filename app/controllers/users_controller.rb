@@ -20,16 +20,6 @@ class UsersController < ApplicationController
 		@followers = current_user.followers.collect(&:user)
 	end
 
-	def like
-		@user.liked_by current_user
-		redirect_to :back
-	end
-
-	def unlike
-		@user.unliked_by current_user
-		redirect_to :back
-	end
-
 	def feeds
 		@pins =  Pin.where(user_id: current_user.followings.pluck(:id))
 	end
