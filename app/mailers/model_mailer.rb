@@ -16,4 +16,11 @@ class ModelMailer < ActionMailer::Base
     mail to: pin.user.email, subject: "#{@pin.user.name}, jouw recept #{@pin.description} wordt lekker gevonden door anderen.", bcc: "oliviervanhees@gmail.com"
   end
 
+   def new_pin_follower_notification(pin)
+    @pin = pin
+    @followers.each do |f|
+    @u = User.find(f.follower)
+    mail to: @u.email, subject: "#{@pin.user.name} heeft #{@pin.description} toegevoegd.", bcc: "oliviervanhees@gmail.com"
+  end
+
 end

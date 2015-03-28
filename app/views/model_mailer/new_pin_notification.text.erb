@@ -1,6 +1,20 @@
-Hi,
+Hi <%= @pin.user.name %>,
 
-<%= @pin.description %>, is toegevoegd aan Altijd Heerlijk. Bekijk <% pin_url(@pin) %> jouw recept.
+Jouw recept <%= @pin.description %>, is succesvol toegevoegd aan Altijd Heerlijk. 
+
+Wat heb je ingevoerd? 
+
+Ingrediënten:
+<%= @pin.ingredients2 %>
+
+Bereidingswijze:
+<%= @pin.preparation %>
+
+Foto van recept:
+<%= image_tag @pin.image.url(:medium) %> 
+
+Bekijk of wijzig jouw recept <%= link_to "hier", pin_url(@pin) %>.
+
 
 Smakelijke groet,
 

@@ -1,0 +1,9 @@
+<p>Hi <%= @user.name %>,</p>
+
+<p>Het recept <b><%= @pin.description %></b>, is door <%= @pin.user.name %> toegevoegd aan Altijd Heerlijk. </p>
+
+<p>Bekijk het recept <%= link_to "hier", pin_url(@pin) %>.</p>
+
+<p>Smakelijke groet,</p>
+
+<p>Altijd Heerlijk</p>
