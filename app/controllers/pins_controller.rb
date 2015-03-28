@@ -40,7 +40,7 @@ class PinsController < ApplicationController
     @pin = current_user.pins.build(pin_params)
     if @pin.save
       ModelMailer.new_pin_notification(@pin).deliver
-      ModelMailer.new_pin__follower_notification(@pin).deliver
+      
       redirect_to @pin, notice: 'Jouw recept is toegevoegd aan Altijd heerlijk.'
     else
       render action: 'new'
