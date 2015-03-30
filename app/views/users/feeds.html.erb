@@ -1,5 +1,5 @@
 <h1>Recepten van jouw vrienden</h1>
-<p>Bekijk hier de recepten die je vrienden lekker vinden.</p> 
+<p>Bekijk hier de recepten die jouw <b><%= current_user.follows.count%></b> vrienden hebben toegevoegd.</p> 
 <% if @pins.present? && @pins.to_a.size > 0 %>
 <%= render 'pins/show_pin_details' %>  
 <% else %>

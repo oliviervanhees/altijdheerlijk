@@ -1,8 +1,14 @@
 Hi <%= @pin.user.name %>,
 
-Jouw recept <%= @pin.description %> wordt lekker gevonden door anderen.
+Jouw recept <%= @pin.description %> wordt nu lekker gevonden door:
 
-Bekijk <%= link_to "hier", pin_url(@pin) %> welke personen jouw recept nu lekker vinden.
+<% @pin.votes_for.voters.each do |p| %>
+
+<%= p.name %>
+
+<% end %>
+
+Bekijk <%= link_to "hier", pin_url(@pin) %> jouw recept op Altijd Heerlijk.
 
 Smakelijke groet,
 

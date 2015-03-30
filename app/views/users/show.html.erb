@@ -1,4 +1,4 @@
-<p><%= link_to 'Terug', users_path %></p>
+<p><%= link_to 'Terug', :back %></p>
 <h1><%=@user.name %></h1> 
 
 <%= link_to "Stop volgen", user_unfollow_path(@user), :method => :delete, :class => "btn btn-sm btn-danger", :remote => true %>   

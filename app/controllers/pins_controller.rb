@@ -19,6 +19,7 @@ class PinsController < ApplicationController
     @pin.liked_by current_user
     redirect_to :back, notice: 'Je hebt dit recept nu toegevoegd aan jouw bewaarde recepten.'
     ModelMailer.new_like_notification(@pin).deliver
+
   end
 
   def unlike
@@ -40,7 +41,7 @@ class PinsController < ApplicationController
     @pin = current_user.pins.build(pin_params)
     if @pin.save
       ModelMailer.new_pin_notification(@pin).deliver
-      Modelmailerr.new_pin_follower_notification.deliver
+      
       redirect_to @pin, notice: 'Jouw recept is toegevoegd aan Altijd heerlijk.'
     else
       render action: 'new'

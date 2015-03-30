@@ -1,5 +1,5 @@
 <h1>Mijn volgers</h1>
-<p>Bekijk hier alle chefs die jou volgen op Altijd Heerlijk. <br>
+<p>Bekijk hier de <b><%= current_user.followers.count %></b> chefs die jou volgen op Altijd Heerlijk. <br>
    <% if @followers.present? && @followers.size > 0 %>
    <div id="pins" class="transitions-enabled">
             <% @followers.each do |user| %>

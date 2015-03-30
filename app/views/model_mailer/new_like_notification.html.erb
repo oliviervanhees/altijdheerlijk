@@ -1,14 +1,14 @@
 <p>Hi <%= @pin.user.name %>,</p>
 
-<p>Jouw recept <b><%= @pin.description %></b> wordt lekker gevonden door anderen.</p>
+<p>Jouw recept <b><%= @pin.description %></b> wordt nu lekker gevonden door:</p>
 
-<% @pin.votes_for.each do |user| %>
+<% @pin.votes_for.voters.each do |p| %>
 
-<li><%= @user.name %></li>
+<li><%= p.name %></li>
 
 <% end %>
 
-<p>Bekijk <%= link_to "hier", pin_url(@pin) %> welke personen jouw recept nu lekker vinden.</p>
+<p>Bekijk <%= link_to "hier", pin_url(@pin) %> jouw recept op Altijd Heerlijk.</p>
 
 <p>Smakelijke groet,</p>
 

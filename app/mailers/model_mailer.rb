@@ -14,6 +14,7 @@ class ModelMailer < ActionMailer::Base
   def new_like_notification(pin)
     @pin = pin
     @user = pin.user
+  
     mail to: pin.user.email, subject: "#{@pin.user.name}, jouw recept #{@pin.description} wordt lekker gevonden door anderen.", bcc: "oliviervanhees@gmail.com"
   end
 

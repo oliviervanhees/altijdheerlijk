@@ -1,4 +1,4 @@
 <h1>Mijn favoriete recepten</h1>
-<p>Bekijk hier jouw  favoriete recepten.</p> 
+<p>Bekijk hier jouw <b><%= current_user.find_liked_items.size %></b> favoriete recepten.</p> 
 <%= render 'pins/show_pin_details' %>  
 
