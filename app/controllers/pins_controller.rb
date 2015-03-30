@@ -24,7 +24,7 @@ class PinsController < ApplicationController
 
   def unlike
     @pin.unliked_by current_user
-    redirect_to :back
+    redirect_to :back, notice: 'Dit recept is verwijderd uit jouw bewaarde recepten.'
   end
 
   def show

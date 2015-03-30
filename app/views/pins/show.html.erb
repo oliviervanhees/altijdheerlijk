@@ -1,8 +1,15 @@
 <%= link_to 'Terug', :back %>
 <h1><%= @pin.description %></h1>
-      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success btn-sm" do %>
-      <span class="glyphicon glyphicon-heart"></span>
-      Bewaar recept
+      <% if current_user.liked? @pin %>
+        <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger btn-sm" do %>
+        <span class="glyphicon glyphicon-remove"></span>
+        Verwijder recept
+        <% end %>
+      <% else %>
+        <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success btn-sm" do %>
+        <span class="glyphicon glyphicon-heart"></span>
+        Bewaar recept
+        <% end %>
       <% end %>
       <br></br>
   <div class="col-md-offset-0 col-md-14">
