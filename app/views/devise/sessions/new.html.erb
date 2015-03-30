@@ -1,46 +1,14 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <div class="panel-title">
-      <h1>Inloggen</h1>
+     <div class="panel-title">
+      <h1>Log in en ontdek de favoriete recepten van jouw vrienden.</h1>
+      </div>
+    <div class="panel-heading">
+      Bij Altijd Heerlijk ontdek je de recepten van je vrienden en andere levensgenieters. Log in met je Facebook account, bekijk welke recepten jouw vrienden lekker vinden en start direct met het ontdekken van nieuwe recepten.
     </div>
-  </div>
-
-<div class="panel-heading">
-  Gebruik je Facebook account
+<div class="panel-body">
+        <%= link_to "Log in met Facebook account", user_omniauth_authorize_path(:facebook), class: "btn btn-facebook btn-lg" %><br/><br/>
+      <b>Note:</b> Altijd Heerlijk plaatst <u>nooit berichten op jouw Facebook pagina</u>.
+      </div>
 </div>
-  <div class="panel-body">
-     <%= link_to "Login met Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-info" %><br/>
-    <br />
-</div>
-
-<div class="panel-heading">
-  Of login met je Altijd Heerlijk account
-  </div>
-
-  <div class="panel-body">
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-control", :autofocus => true %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password, "Wachtwoord" %>
-        <%= f.password_field :password, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, "Onthouden" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.submit "Log in", class: "btn btn-info" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="panel-footer">
-    <%= render "devise/shared/links" %>
-  </div>
 </div>

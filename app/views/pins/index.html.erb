@@ -1,8 +1,4 @@
-<% if user_signed_in? %> 
-    <h1>Zoek recepten</h1>
-    <p>Bekijk hier alle <b><%= @pins.count %> recepten</b> die op Altijd Heerlijk te vinden zijn. 
-    <u>Tip:bewaar jouw favoriete recepten.</u></p> 
-    <%= render 'pins/show_pin_details' %>  
-<% else %>
-    <%= render 'pages/login' %>
-<% end %>
+<h1>Zoek recepten</h1>
+<p>Bekijk hier alle <b><%= @pins.count %> recepten</b> die op Altijd Heerlijk te vinden zijn. 
+<u>Tip:bewaar jouw favoriete recepten.</u></p> 
+<%= render 'pins/show_pin_details' %>  

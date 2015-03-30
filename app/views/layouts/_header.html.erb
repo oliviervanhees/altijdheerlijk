@@ -14,18 +14,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-            <% if user_signed_in? %>  
-              <li><%= link_to "Mijn toegevoegde recepten", my_pins_path %></li> 
-              <li><%= link_to "Mijn bewaarde recepten", my_favorites_path %></li> 
+              <li><%= link_to "Recepten van vrienden", my_friends_pins_path %></li>
+              <li><%= link_to "Mijn eigen recepten", my_pins_path %></li> 
+              <li><%= link_to "Mijn favoriete recepten", my_favorites_path %></li> 
               <li><%= link_to "Mijn vrienden", my_friends_path %></li>
               <li><%= link_to "Mijn volgers", followers_path %></li>
               <li><%= link_to "Zoek vrienden", users_path %></li> 
               <li><%= link_to "Zoek recepten", pins_path %></li> 
               <li><%= link_to 'Recept toevoegen', new_pin_path %></li>
-              <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li>   
-            <% else %>
-              <li><%= link_to "Inloggen", new_user_session_path %></li>  
-            <% end %>
+              <li><%= link_to "Log uit", destroy_user_session_path, method: :delete %></li> 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

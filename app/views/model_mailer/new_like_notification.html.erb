@@ -2,6 +2,12 @@
 
 <p>Jouw recept <b><%= @pin.description %></b> wordt lekker gevonden door anderen.</p>
 
+<% @pin.votes_for.each do |user| %>
+
+<li><%= @user.name %></li>
+
+<% end %>
+
 <p>Bekijk <%= link_to "hier", pin_url(@pin) %> welke personen jouw recept nu lekker vinden.</p>
 
 <p>Smakelijke groet,</p>

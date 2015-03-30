@@ -1,7 +1,4 @@
-<% if user_signed_in? %>  
-  <h1>Mijn bewaarde recepten</h1>
-  <p>Bekijk hier jouw  favoriete recepten.</p> 
-      <%= render 'pins/show_pin_details' %>  
-<% else %>
-  <%= render 'pages/login' %>
-<% end %>
+<h1>Mijn favoriete recepten</h1>
+<p>Bekijk hier jouw  favoriete recepten.</p> 
+<%= render 'pins/show_pin_details' %>  
+

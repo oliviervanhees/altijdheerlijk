@@ -13,7 +13,8 @@
 
   resources :users 
 
-  root "users#feeds"
+  root "users#home"
+  get "my_friends_pins" => "users#feeds"
   get "my_pins" => "pins#my_pins"
   get "my_favorites" => "pins#my_favorites"
   get "my_friends" => "users#my_friends"

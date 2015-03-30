@@ -1,9 +1,8 @@
-<% if user_signed_in? %>  
 <h1>Mijn volgers</h1>
 <p>Bekijk hier alle chefs die jou volgen op Altijd Heerlijk. <br>
-   <% if @followings.present? && @followings.size > 0 %>
+   <% if @followers.present? && @followers.size > 0 %>
    <div id="pins" class="transitions-enabled">
-            <% @followings.each do |user| %>
+            <% @followers.each do |user| %>
               <div class="box panel panel-default" id = "user_<%= user.id %>">
                <%= render :partial => 'users/user', :locals => {:user => user} %>
                     </div> 
@@ -11,7 +10,7 @@
         <% else %>
           <p><b>Er is nog niemand die jouw volgt, nodig nu vrienden uit om jou te volgen.</p></b>
         <% end %> 
-<% end %> 
+
 
   
       

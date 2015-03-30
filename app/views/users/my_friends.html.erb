@@ -1,4 +1,3 @@
-<% if user_signed_in? %>  
 <h1>Mijn vrienden</h1>
 <p>Bekijk hier alle chefs die jij volgt op Altijd Heerlijk. <br>
    <% if @followings.present? && @followings.size > 0 %>
@@ -11,4 +10,3 @@
         <% else %>
           <p><b> Je volgt nog geen andere chefs, bekijk alle chefs op Altijd Heerlijk en volg jouw favoriete chef.</p></b>
         <% end %> 
-<% end %> 
