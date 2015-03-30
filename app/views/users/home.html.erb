@@ -5,29 +5,30 @@
 
     <div id="pins" class="transitions-enabled">
       
-    <%= link_to my_friends_pins_path, class: "btn btn-success btn-lg " do %>
+
+    <%= link_to my_friends_pins_path, class: "btn btn-success btn-block " do %>
     <span class="glyphicon glyphicon-chevron-right"></span>
     Bekijk recepten van mijn <b><%= current_user.follows.count %></b> vrienden
     <% end %></p>
-    <%= link_to my_pins_path, class: "btn btn-success btn-lg" do %>
+    <%= link_to my_pins_path, class: "btn btn-success btn-block" do %>
     <span class="glyphicon glyphicon-chevron-right"></span>
     Bekijk mijn <b><%= current_user.pins.size %></b> eigen recepten
     <% end %></p>
-    <%= link_to my_favorites_path, class: "btn btn-success btn-lg" do %>
+    <%= link_to my_favorites_path, class: "btn btn-success btn-block" do %>
     <span class="glyphicon glyphicon-chevron-right"></span>
     Bekijk mijn <b><%= current_user.find_liked_items.size %></b> favoriete recepten 
     <% end %></p>
-    <%= link_to my_friends_path, class: "btn btn-success btn-lg" do %>
+    <%= link_to my_friends_path, class: "btn btn-success btn-block" do %>
     <span class="glyphicon glyphicon-chevron-right"></span>
     Bekijk mijn <b><%= current_user.follows.count %></b> vrienden
     <% end %></p>
-    <%= link_to followers_path, class: "btn btn-success btn-lg" do %>
+    <%= link_to followers_path, class: "btn btn-success btn-block" do %>
     <span class="glyphicon glyphicon-chevron-right"></span>
     Bekijk mijn <b><%= current_user.followers.count %></b> volgers
     <% end %></p>
-    <%= link_to new_pin_path, class: "btn btn-danger btn-lg" do %>
+    <%= link_to new_pin_path, class: "btn btn-danger btn-block" do %>
     <span class="glyphicon glyphicon-chevron-right"></span>
     Voeg direct recept toe
     <% end %></p>
-
+    
     </div>
