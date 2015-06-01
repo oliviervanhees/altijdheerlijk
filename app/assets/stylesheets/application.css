@@ -11,5 +11,6 @@
  *= require_self
  *= require 'masonry/transitions'
  *= require_tree .
+ *= require bootstrap-social
  
  */

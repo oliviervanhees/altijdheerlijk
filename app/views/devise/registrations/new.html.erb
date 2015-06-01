@@ -1,14 +1,16 @@
 <div class="panel panel-default">
   <div class="panel-heading">
      <div class="panel-title">
-      <h1>Maak een account</h1>
+      <h2>Ontdek de favoriete recepten van jouw vrienden.</h2>
       </div>
     <div class="panel-heading">
-       Bij Altijd Heerlijk ontdek je de recepten van je vrienden en andere levensgenieters. Log in met je Facebook account, bekijk welke recepten jouw vrienden lekker vinden en start direct met het ontdekken van nieuwe recepten.
+  Bij Altijd Heerlijk ontdek je de recepten van jouw eigen vrienden. Log in met je Facebook account en start direct met het ontdekken van nieuwe recepten.
     </div>
 <div class="panel-body">
-        <%= link_to "Maak account aan", user_omniauth_authorize_path(:facebook), class: "btn btn-danger btn-lg" %><br/><br/>
+        <%= link_to "Log in met Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-social btn-facebook" %><br/><br/>
       <b>Note:</b> Altijd Heerlijk plaatst <u>nooit berichten op jouw Facebook pagina</u>.
       </div>
 </div>
 </div>
+</div>
+
