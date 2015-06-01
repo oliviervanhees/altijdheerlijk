@@ -6,26 +6,20 @@
 
   <br></br><p>Bekijk hier de recepten van <b><%=@user.name %></b>.
     <div id="pins" class="transitions-enabled">
-              <% @user.pins.each do |pin| %>
-                <div class="box panel panel-default">
-                    <div class="panel-body">
-                      <div class="actions">
-                      <b>Recept:</b>
-                      <p><%= link_to pin.description, pin %></p>
-                      <b>Toegevoegd door:</b>
-                      <p><%= link_to image_tag(@user.image_file_name), pin.user %></p>
-                      </div>   
-                    </div>
-                </div>
-              <% end %>
               <% @user.find_liked_items.each do |pin| %>
                 <div class="box panel panel-default">
                     <div class="panel-body">
                       <div class="actions">
                       <b>Recept:</b>
-                      <p><%= link_to pin.description, pin %></p>
-                      <b>Toegevoegd door:</b>
-                      <p><%= link_to image_tag(@user.image_file_name), pin.user %></p>
+                          <p><%= link_to pin.description, pin %></p>
+
+                      <p><b>Favoriet recept van: </b></p>
+                          <% pin.votes_for.voters.each do |p| %> 
+                          <% if p.present? %>
+                            <p><%= link_to image_tag(p.image_file_name), @user %></p>
+                           <% end %>   
+                      <% end %>
+
                       </div>   
                     </div>
                 </div>
