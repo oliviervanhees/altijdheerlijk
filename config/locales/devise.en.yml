@@ -2,10 +2,10 @@
 
 en:
   devise:
-  callbacks:
-    user:
-      success: "Je bent nu ingelogd."
-      failure: "Log in met je Facebook account"
+    callbacks:
+      user:
+        success: "Je bent nu ingelogd."
+        failure: "Log in met je Facebook account"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -18,7 +18,8 @@ en:
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "Log in met je facebook account en ontdek de gerechten van jouw vrienden."
+      unauthenticated: "Log in with your facebook account and discover the favorite restaurants of your friends."
+      authenticated: "You are logged in successfully and can now start discovering new restaurants."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
