@@ -1,12 +1,21 @@
 <h1>Mijn vrienden</h1>
 <p>Bekijk hier jouw <b><%= current_user.follows.count %></b> vrienden op Altijd Heerlijk. <br>
-   <% if @followings.present? && @followings.size > 0 %>
-   <div id="pins" class="transitions-enabled">
+     <% if @followings.present? && @followings.size > 0 %>
+     <div id="pins" class="transitions-enabled">
             <% @followings.each do |user| %>
-              <div class="box panel panel-default" id = "user_<%= user.id %>">
-               <%= render :partial => 'users/user', :locals => {:user => user} %>
-                    </div> 
-            <% end %>
-        <% else %>
+                <div class="box panel panel-default" id = "user_<%= user.id %>">
+                <%= render :partial => 'users/user', :locals => {:user => user} %>
+                </div> 
+                <% end %>
+      <% else %>
           <p><b> Je volgt nog geen andere chefs, bekijk alle chefs op Altijd Heerlijk en volg jouw favoriete chef.</p></b>
-        <% end %> 
+      <% end %> 
+ </div> 
+
+<%= link_to users_path, class: "btn btn-success btn-block" do %>
+<span class="glyphicon glyphicon-chevron-right"></span>
+Voeg vrienden toe
+<% end %></p>
+
+
+

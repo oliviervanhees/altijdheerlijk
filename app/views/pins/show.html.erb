@@ -1,22 +1,24 @@
-<%= link_to 'Terug', :back %>
+<%= link_to :back, class: "btn btn-default" do %>
+<span class="glyphicon glyphicon-chevron-left"></span>
+Back
+<% end %>
+<% if current_user.liked? @pin %>
+  <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger btn-sm" do %>
+  <span class="glyphicon glyphicon-remove"></span>
+  Unlike
+  <% end %>
+<% else %>
+  <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success btn-sm" do %>
+  <span class="glyphicon glyphicon-heart"></span>
+  Like
+  <% end %>
+<% end %>
+
 <h1><%= @pin.description %></h1>
-      <% if current_user.liked? @pin %>
-        <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger btn-sm" do %>
-        <span class="glyphicon glyphicon-remove"></span>
-        Verwijder recept
-        <% end %>
-      <% else %>
-        <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success btn-sm" do %>
-        <span class="glyphicon glyphicon-heart"></span>
-        Bewaar recept
-        <% end %>
-      <% end %>
-      <br></br>
+
   <div class="col-md-offset-0 col-md-14">
     <div class="panel panel-default">
-      <div class="panel-heading center">
-         <p><b>Toegevoegd door: </b></p>
-          <p><%= link_to image_tag(@pin.user.image_file_name), @pin.user %></p>  
+      <div class="panel-body">
             <p><b>Favoriet recept van: </b></p>
                 <% @pin.votes_for.voters.each do |p| %> 
                   <p><%= link_to image_tag(p.image_file_name), @user %></p>
@@ -24,25 +26,28 @@
       </div>
     </div>
   </div>
-    <div class="panel panel-default">
+
+      <div class="panel panel-default">
       <div class="panel-body">
           <p><strong>Ingrediënten:</strong>
             <%= @pin.ingredients2 %></p>
+      </div>
+      </div>    
+
+      <div class="panel panel-default">
+      <div class="panel-body">
           <p><strong>Bereidingswijze:</strong>
             <%= @pin.preparation %></p>
-          <p><strong>Foto van recept:</strong></p>
-        	 <%= image_tag @pin.image.url(:medium) %><br>   
-          <br></br>
-                 <div class="btn-group.pull-right">
-                    <%= link_to edit_pin_path(@pin), class: "btn btn-warning btn-sm" do %>
-                      <span class="glyphicon glyphicon-edit"></span>
-                      Wijzig recept
-                    <% end %>
-                  </div>
-         
       </div>
-    </div>    
-  </div>
-     
+      </div>    
+
+      <div class="panel panel-default">
+      <div class="panel-body">
+          <p><strong>Foto van recept:</strong></p>
+        	 <%= image_tag @pin.image.url(:medium) %><br> 
+      </div>
+      </div>
+
+
 
 
