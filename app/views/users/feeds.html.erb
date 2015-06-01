@@ -3,5 +3,10 @@
 <% if @pins.present? && @pins.to_a.size > 0 %>
 <%= render 'pins/show_pin_details' %>  
 <% else %>
-	<p> Je hebt nog geen suggesties, voeg eerst vrienden toe om persoonlijke suggesties te ontvangen. </p>
+	<p><u>Voeg eerst vrienden toe om persoonlijke suggesties te ontvangen.</u></p>
 <% end %>
+
+<%= link_to users_path, class: "btn btn-success btn-block" do %>
+<span class="glyphicon glyphicon-chevron-right"></span>
+Voeg vrienden toe<% end %></p>
+
