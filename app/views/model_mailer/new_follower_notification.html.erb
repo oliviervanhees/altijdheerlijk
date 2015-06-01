@@ -1,18 +1,8 @@
-<p>Hi <%= @pin.user.name %>,</p>
+<p>Hi <%= @user.name %>,</p>
 
-<p>Jouw recept <b><%= @pin.description %></b>, is succesvol toegevoegd aan Altijd Heerlijk. </p>
+<p>Je bent toegevoegd als vriend door <%= @current_user.name %>. </p>
 
-<p>Wat heb je ingevoerd? <p>
-<p><b>Ingrediënten:</b>
-<%= @pin.ingredients2 %></p>
-<p><b>Bereidingswijze:</b>
-<%= @pin.preparation %></p>
-<p><b>Foto van recept:</b></p>
-<%= image_tag @pin.image.url(:medium) %>  <br>   
-</div>
-
-<p>Bekijk of wijzig jouw recept <%= link_to "hier", pin_url(@pin) %>.</p>
-
+<p>Bekijk al je vrienden <%= link_to "hier", my_friends_url(@user) %>.</p>
 
 <p>Smakelijke groet,</p>
 

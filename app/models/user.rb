@@ -36,4 +36,10 @@ class User < ActiveRecord::Base
   end 
 
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/default.jpg"
+
+  private
+    def send_welcome_email
+      ModelMailer.new_user_account_notification(self).deliver
+    end
+    
 end
