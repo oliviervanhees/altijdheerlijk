@@ -1,11 +1,18 @@
-<p><%= link_to 'Terug', :back %></p>
-<h1><%=@user.name %></h1> 
+<%= link_to :back, class: "btn btn-default" do %>
+  <span class="glyphicon glyphicon-chevron-left"></span>
+    Back
+<% end %>
+<%= link_to "Stop volgen", user_unfollow_path(@user), :method => :delete, :class => "btn btn-sm btn-danger", :remote => true %>  
+<br></br> 
 
-<%= link_to "Stop volgen", user_unfollow_path(@user), :method => :delete, :class => "btn btn-sm btn-danger", :remote => true %>   
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h2><%=@user.name %></h2>
+    <p><%= link_to image_tag(@user.image_file_name), @user %></p>
+  </div>
+</div> 
 
-
-  <br></br><p>Bekijk hier de recepten van <b><%=@user.name %></b>.
-    <div id="pins" class="transitions-enabled">
+ <div id="pins" class="transitions-enabled">
               <% @user.find_liked_items.each do |pin| %>
                 <div class="box panel panel-default">
                     <div class="panel-body">
